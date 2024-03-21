@@ -1,0 +1,387 @@
+.header-top
+  background: #785E4F
+  &__box
+    display: grid
+    grid-auto-flow: column
+    gap: 20px
+    padding: 13px 0
+  &__menu
+    display: grid
+    grid-auto-flow: column
+    gap: 40px
+    justify-items: start
+    @media all and ($middle)
+      gap: 20px
+  &__link
+    font-size: 12px
+    font-weight: 600
+    text-transform: uppercase
+    color: #fff
+    text-decoration: none
+  &__item
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      bottom: -13px
+      width: 40px
+      height: 3px
+      border-radius: 3px
+      left: 50%
+      transform: translateX(-50%)
+      background: $orange
+      opacity: 0
+      transition: opacity $anim
+    &:active::before, &:hover::before, &:focus::before
+      opacity: 1
+  &__contacts
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    justify-content: end
+    align-items: center
+    @media all and ($mobile)
+      justify-content: space-between
+  &__contacs-item
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 1px
+      height: 13px
+      left: -5px
+      top: 50%
+      transform: translateY(-50%)
+      background: #DCDCDC
+      @media all and ($table)
+        display: none
+    &:first-child::before
+      display: none
+  &__order-link
+    font-size: 14px
+    color: #fff
+    font-weight: 400
+    text-decoration: none
+    display: grid
+    span
+      text-decoration: underline
+    &--font
+      font-family: 'Roboto', 'Lato', sans-serif
+      p
+        @media all and ($table)
+          display: none
+    &--text-mob
+      @media all and ($mobile)
+        display: block !important
+    &--mob
+      @media all and ($table)
+        display: none
+    &:active, &:hover, &:focus
+      text-decoration: underline
+  &__order-img-mob
+    display: none
+    @media all and ($table)
+      display: block
+
+.header-btm
+  position: relative
+  background: #F4F4F4
+  &__area
+    display: grid
+    grid-template-areas: "logo catalog search cart"
+    grid-template-columns: auto auto 1fr auto
+    align-items: center
+    gap: 20px
+    justify-content: space-between
+    padding: 16px 0 12px 0
+    @media all and ($table)
+      grid-template-areas: "logo cart"
+      padding: 12px 0
+      grid-template-columns: 1fr auto
+    @media all and ($mobile)
+      // grid-template-columns: auto auto 1fr auto
+      gap: 10px
+  &__logo
+    grid-area: logo
+    @media all and ($mobile)
+      justify-self: start
+  &__catalog
+    grid-area: catalog
+  &__cart
+    grid-area: cart
+    @media all and ($mobile)
+      justify-self: end
+  &__search
+    grid-area: search
+    max-width: 496px
+    width: 100%
+    @media all and ($table)
+      display: none
+
+  &__logo-link
+    img
+      max-width: 244px
+      @media all and ($mobile)
+        max-width: 169px
+  &__catalog
+    display: grid
+    justify-items: start
+    display: flex
+    @media all and ($table)
+      display: none
+  .catalog-button
+    padding: 0
+    width: 20px
+    position: relative
+    border-radius: 0
+    background: transparent
+    &:after
+      content: ''
+      position: absolute
+      width: 40px
+      height: 40px
+      left: -10px
+      top: -10px
+  .catalog-button--active
+    .header-btm__navigation-menu--open
+      display: none
+    .header-btm__navigation-menu--close
+      display: block
+  &__navigation-menu--open
+    display: block
+  &__navigation-menu--close
+    display: none
+  &__catalog-title
+    color: #000
+    font-size: 13px
+    font-weight: 600
+    cursor: pointer
+    text-transform: uppercase
+  &__cart-box
+    display: grid
+    grid-auto-flow: column
+    align-items: center
+    gap: 15px
+    position: relative
+    @media all and ($mobile)
+      gap: 5px
+  &__cart-price
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 1px
+      height: 100%
+      left: -7px
+      top: 50%
+      transform: translateY(-50%)
+      background: #7E808B
+      @media all and ($mobile)
+        display: none
+    p
+      color: #000
+      font-size: 17px
+      font-weight: 700
+      @media all and ($mobile)
+        font-size: 15px
+      span
+        color: #585858
+        font-size: 18px
+        font-weight: 300
+        text-transform: uppercase
+        @media all and ($mobile)
+          font-size: 15px
+  &__cart-image
+    position: relative
+  &__navigation-item
+    &--mob
+      display: none
+      @media all and ($table)
+        display: grid
+.catalog-navigation
+  display: grid
+  gap: 15px
+  &__link
+    font-size: 14px
+    font-weight: 400
+    color: #000
+    text-decoration: none
+  &__item
+    position: relative
+    &::before
+      position: absolute
+      content: ""
+      width: 100%
+      height: 1px
+      bottom: -7px
+      background: #AAB2C2
+    &:last-child::before
+      display: none
+.catalog-drop
+  background-color: #ffffff
+  position: absolute
+  top: 75%
+  z-index: 999
+  overflow: hidden
+  display: none
+  padding: 15px
+  border-radius: 5px
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.15)
+  @media all and ($table)
+    top: 40%
+  &__container
+    display: flex
+    @media all and ($mobile)
+      display: none
+
+.search
+  position: relative
+  border-radius: 5px
+  border: 1px solid #AAB2C2
+  padding: 2px 40px 2px 0px
+  background-color: #fff
+  display: grid
+  grid-auto-flow: column
+  justify-content: start
+  grid-template-columns: auto 1fr
+  &__input
+    width: 100%
+    border: none
+    &:focus-visible
+      outline: none
+  &__button
+    height: 100%
+    right: 0
+    top: 0
+    position: absolute
+    padding-right: 10px
+    padding-left: 10px
+    border-radius: 0 5px 5px 0
+    img
+      width: 21px
+      height: 21px
+  .select2-container
+    display: grid
+    align-items: center
+    padding: 4px
+    max-width: fit-content
+    min-width: 100px
+  .select-search__selection
+    background: rgba(106, 115, 125, 0.15)
+    border: none
+  // .select-search__drop
+  //   max-height: 100%
+.search-area
+  .select2-search--dropdown
+    display: none
+  .select2-container--open .select2-dropdown--below
+    min-width: fit-content
+  .select-filter__drop
+    max-height: none
+
+.header-btm-mob
+  display: none
+  background: #5D6877
+  padding: 5px 0
+  @media all and ($table)
+    display: block
+  .header-btm__search--mob
+    display: none
+    @media all and ($table)
+      display: grid
+      max-width: none
+    .search-area
+      max-width: none
+  &__box
+    display: grid
+    grid-auto-flow: column
+    grid-template-rows: 1fr
+    grid-template-columns: 18px auto
+    gap: 20px
+
+//мобильное меню
+.catalog-mobile
+  &__logo
+    display: grid
+    gap: 20px
+    grid-auto-flow: column
+    justify-content: space-between
+    img
+      max-width: 236px
+  &__logo-close
+    background: none
+    img
+      width: 18px
+      height: 18px
+  &__container
+    position: fixed
+    align-content: start
+    // flex-direction: column
+    left: 0
+    top: 0
+    width: 100%
+    height: 100vh
+    z-index: 1000
+    padding-top: 15px
+    background-color: #2C537C
+    position: absolute
+    display: grid
+    // flex-direction: column
+    gap: 40px
+    overflow-y: auto
+    visibility: hidden
+    transform: translateX(-120%)
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out
+  &__container.active
+    visibility: visible
+    transform: none
+  &__menu-link
+    color: #fff
+    font-size: 16px
+    font-weight: 600
+    text-decoration: none
+    &:active, &:hover, &:focus
+      color: $orange
+  &__button
+    padding-bottom: 20px
+  &__links
+    display: grid
+    padding-bottom: 20px
+    gap: 10px
+  &__catalog-link
+    color: #fff
+    font-size: 16px
+    font-weight: 600
+    text-decoration: none
+    transition: color $anim
+    &:active, &:hover, &:focus
+      color: $orange
+
+.stop-scroll
+  overflow: hidden
+
+.accordion
+  cursor: pointer
+  width: 100%
+  border: none
+  text-align: left
+  outline: none
+  position: relative
+  transition: color $anim
+  &::before
+    content: ""
+    position: absolute
+    background: url(../../assets/img/accordion.svg)
+    width: 14px
+    height: 8px
+    background-repeat: no-repeat
+    background-position: center
+    right: 0
+    top: 7px
+.panel
+  display: grid
+  padding: 0 18px
+  color: #212121
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.3s ease-out

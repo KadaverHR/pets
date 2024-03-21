@@ -1,0 +1,26 @@
+.company
+  &__text-box
+    display: grid
+    gap: 30px
+  &__text
+    color: #000
+    font-size: 16px
+    font-weight: 400
+    @media all and ($mobile)
+      font-size: 15px
+  &__img-box
+    padding-top: 60px
+    padding-bottom: 50px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 30px
+    @media all and ($table)
+      padding-bottom: 20px
+    @media all and ($mobile)
+      grid-template-columns: 1fr
+      padding-top: 30px
+      padding-bottom: 10px
+      justify-items: center
+    img
+      border-radius: 5px
+      object-fit: cover

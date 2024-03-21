@@ -1,0 +1,189 @@
+.product-card
+  padding-top: 30px
+  &__title
+    padding-bottom: 20px
+    border-bottom: 1px solid #E5E5E5
+    grid-template-columns: 1fr
+    @media all and ($table)
+      border-bottom: none
+    .title
+      font-size: 36px
+      @media all and ($mobile)
+        font-size: 24px
+  &__box
+    padding: 30px 0
+    display: grid
+    grid-template-columns: repeat(3, 1fr )
+    gap: 30px
+    align-items: start
+    @media all and ($middle)
+      grid-template-columns: 350px 1fr 1fr
+    @media all and ($table)
+      grid-template-columns: 1fr
+      border: 1px solid #AAB2C2
+      border-radius: 5px
+      padding: 20px 10px
+  &__img-wrapper
+    padding: 30px
+    border: 1px solid #AAB2C2
+    border-radius: 5px
+    @media all and ($table)
+      border: none
+      justify-self: center
+  &__desc
+    width: 100%
+  &__desc-list
+    display: grid
+    gap: 15px
+    justify-items: start
+    @media all and ($table)
+      justify-items: stretch
+  &__desc-item
+    display: grid
+    grid-auto-flow: column
+    gap: 5px
+    align-items: baseline
+    @media all and ($table)
+      justify-content: space-between
+      position: relative
+      &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 1px
+        top: 50%
+        transform: translateY(-50%)
+        background: url(../../assets/img/line.svg)
+        z-index: 0
+  &__desc-bg
+    @media all and ($table)
+      padding: 0 10px
+      background: #fff
+      z-index: 10
+      &:nth-of-type(odd)
+        padding-left: 0
+      &:nth-of-type(even)
+        padding-right: 0
+      &--count
+        padding-right: 0
+        padding-left: 10px !important
+  &__desc-title
+    color: #666
+    font-size: 16px
+    font-weight: 400
+  &__desc-parameter
+    color: #35363A
+    font-size: 14px
+    font-weight: 400
+  &__desc-available
+    padding-top: 25px
+    justify-self: center
+    @media all and ($table)
+      padding-top: 15px
+  &__desc-available-text
+    color: #2F5379
+    font-size: 16px
+    font-weight: 400
+  &__order
+    display: grid
+    border-radius: 5px
+    background: #FFF
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12)
+    padding: 20px 30px
+    @media all and ($table)
+      padding: 20px
+    @media all and ($mobile)
+      padding: 0
+      box-shadow: none
+      border-radius: 0
+      padding-top: 20px
+
+  &__order-title
+    color: #000
+    font-size: 24px
+    font-weight: 600
+    text-align: center
+    @media all and ($table)
+      display: none
+  &__order-title-param
+    @media all and ($mobile)
+      color: #000
+      font-family: 'Roboto', 'Lato', sans-serif
+      font-size: 17px
+      font-weight: 700
+  &__order-price-box
+    position: relative
+    .card__price-old
+      position: absolute
+      right: 0
+      top: -15px
+  &__order-price
+    color: #EA5F12
+    font-family: 'Roboto', 'Lato', sans-serif
+    font-size: 21px
+    font-weight: 700
+    span
+      color: #585858
+      font-size: 21px
+      font-weight: 400
+      text-transform: uppercase
+    &--all
+      color: #000
+  &__order-item
+    display: grid
+    grid-auto-flow: column
+    gap: 30px
+    justify-content: space-between
+    align-items: center
+    @media all and ($table)
+      gap: 15px
+    @media all and ($mobile)
+      gap: 35px
+  &__order-list
+    display: grid
+    gap: 15px
+    padding-top: 30px
+    padding-bottom: 30px
+    @media all and ($table)
+      padding-top: 0
+      padding-bottom: 15px
+      grid-template-columns: repeat(3, 1fr)
+    @media all and ($mobile)
+      grid-template-columns: 1fr
+      // justify-items: center
+      justify-content: stretch
+  &__order-btn-box
+    display: grid
+    gap: 15px
+    @media all and ($table)
+      justify-content: center
+    @media all and ($mobile)
+      justify-content: stretch
+  &__order-btn
+    border-radius: 5px
+    color: #FFF
+    font-size: 16px
+    font-weight: 700
+    padding: 10px
+    display: grid
+    gap: 5px
+    grid-auto-flow: column
+    justify-items: center
+    justify-content: center
+    background: transparent
+    @media all and ($table)
+      min-width: 250px
+    @media all and ($mobile)
+      min-width: 0
+      width: 100%
+    &--cart
+      border: 1px solid #EA5F12
+      background: #EA5F12
+    &--click
+      border: 1.5px solid #AAB2C2
+      span
+        color: #000
+        font-family: 'Roboto', 'Lato', sans-serif
+        font-size: 15px
+        font-weight: 400
+        text-decoration-line: underline

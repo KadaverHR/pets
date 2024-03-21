@@ -1,0 +1,30 @@
+.popular-swiper
+  padding-bottom: 100px
+  background: #F4F4F4
+  position: relative
+  @media all and ($middle)
+    padding-bottom: 70px
+  @media all and ($mobile)
+    padding-bottom: 50px
+  .swiper
+    margin-left: 0
+    margin-right: 0
+.swiper-discounts, .swiper-seller
+  &__swiper-pagination
+    position: absolute
+    bottom: 50px !important
+    @media all and ($mobile)
+      bottom: 25px !important
+    & .swiper-pagination-bullet
+      width: 43px
+      height: 6px
+      background: #5D6877
+      border-radius: 3px
+      @media all and ($mobile)
+        background: #5D6877
+        width: 25px
+        height: 5px
+
+
+.swiper-autoheight, .swiper-autoheight .swiper-slide
+  height: 100%

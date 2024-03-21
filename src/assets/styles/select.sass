@@ -1,0 +1,112 @@
+.select2
+  width: 100% !important
+  //@media all and ($mobile)
+  //  width: auto !important
+.select2-dropdown
+  z-index: 95!important
+.select2-selection__clear
+  display: none
+
+.select2-container--open .select2-dropdown--above
+  top: -5px
+
+.select-filter
+  &__drop
+    max-height: 200px
+    overflow-y: auto
+    top: 5px
+    border: 1px solid #AAB2C2!important
+    background-color: #ffffff
+    border-radius: 5px !important
+    padding-right: 10px
+    padding-left: 10px
+    padding-bottom: 5px
+    .select2-results__option
+      word-break: break-word
+      color: #333643
+      padding: 6px 10px
+      font-size: 14px
+      font-weight: 400
+      border-bottom: 1px solid #D6DFE6
+      &:hover
+        color: #333643
+      &:last-child
+        border-bottom: none
+    .select2-search
+      //display: none
+    .select2-results__option--selected
+      font-weight: 700 !important
+      color: #333643
+    .select2-search
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        width: 15px
+        height: 15px
+        z-index: 1
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url("../../assets/img/search-select.svg")
+    .select2-search__field
+      // border-radius: 0 !important
+      padding-right: 30px
+      color: #333643
+      border-radius: 3px
+      border-bottom: 1px solid #D6DFE6
+      font-size: 14px
+      font-weight: 400
+      &::placeholder
+        color: #8E8E8E
+        font-size: 14px
+      font-weight: 400
+  &__selection
+    height: inherit !important
+    min-height: 30px !important
+    display: flex !important
+    align-items: center
+    color: #fff
+    background: #fff
+    border: 1px solid #AAB2C2
+    border-radius: 5px
+    .select2-selection__rendered
+      padding-right: 20px !important
+      padding-left: 10px !important
+      color: #333643
+      font-size: 14px
+      font-weight: 400
+    //text-transform: uppercase
+    .select2-selection__arrow
+      position: absolute
+      transition: 0.2s ease all
+      right: 0
+      top: 0
+      width: 30px
+      height: 100%
+      background-image: url("../../assets/img/select.svg")
+      background-position: center
+      background-repeat: no-repeat
+
+.select2-container--open
+  .select2-selection__arrow
+    transform: rotate(180deg)
+
+.select-service
+  & ~ .select2
+    width: 100% !important
+    .select-filter__selection
+      border-radius: 0
+.select2-selection__clear
+  display: block
+  position: absolute
+  right: 30px
+  font-size: 0 !important
+  span
+    color: #35363A
+    font-size: 13px
+    font-weight: 400
+    text-decoration-line: underline
+    text-decoration-skip-ink: none

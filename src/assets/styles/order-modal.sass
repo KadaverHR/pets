@@ -1,0 +1,79 @@
+.order-modal-area
+  // position: absolute
+  z-index: 10
+  display: none
+  // pointer-events: none
+  padding: 0
+  &--open
+    pointer-events: auto
+    display: block
+  .is-close
+    width: 20px
+    padding: 3px
+    top: -14px
+    right: -14px
+    position: absolute
+.fancybox__content > .carousel__button.is-close
+  top: 25px
+  right: 30px
+  @media all and ($mobile)
+    top: 15px
+    right: 15px
+.carousel__button svg
+  fill: #7E808B
+  width: 14px
+  height: 14px
+  stroke: #7E808B
+.order-modal
+  width: 450px
+  background-color: #ffffff
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
+  border-radius: 5px
+  position: relative
+  padding: 30px 40px
+  @media all and ($mobile)
+    width: auto
+    max-width: 320px
+    padding: 20px
+  &__form
+    display: grid
+    gap: 20px
+  &__title
+    color: $title
+    text-transform: uppercase
+    font-size: 24px
+    font-weight: 700
+    margin-bottom: 10px
+  &__sub-title
+    color: $text
+    font-size: 15px
+    font-weight: 400
+    margin: 20px 0
+
+.order-modal-form
+  &__group
+    display: flex
+    flex-direction: column
+  &__button
+    background: $orange
+    border: 1px solid $orange
+    border-radius: 5px
+    padding: 10px 30px
+    margin: 0 auto
+    font-size: 14px
+    font-weight: 700
+    color: #fff
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out
+    &:hover
+      background: #D9570E
+  &__check
+    position: relative
+    display: grid
+    grid-auto-flow: column
+    gap: 5px
+    justify-items: start
+    justify-content: start
+    align-items: center
+
+.fancybox__carousel.is-draggable .fancybox__slide, .fancybox__carousel.is-draggable .fancybox__slide .fancybox__content
+  cursor: default

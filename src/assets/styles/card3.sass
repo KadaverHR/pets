@@ -1,0 +1,32 @@
+.products-page__body-list.horizontal
+  grid-template-columns: 1fr
+  gap: 0
+  .products-page__body-item
+    border-top: 1px solid #AAB2C2
+    &::last-child
+      border-bottom: 1px solid #AAB2C2
+  .card
+    grid-template-areas: "img title btn" "img art btn" "img avail btn" "img delivery btn"
+    gap: 10px 30px
+    box-shadow: none
+    border-radius: 0
+    align-items: center
+    align-content: center
+    grid-template-columns: 130px 2fr auto
+  .card__img-wrapper
+    grid-area: img
+    img
+      max-width: 130px
+  .card__title
+    grid-area: title
+  .card__available
+    grid-area: avail
+  .card__delivery
+    grid-area: delivery
+  .card__article
+    grid-area: art
+  .card__btm-box
+    grid-area: btn
+    align-self: stretch
+    hr
+      display: none

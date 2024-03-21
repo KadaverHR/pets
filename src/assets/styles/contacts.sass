@@ -1,0 +1,95 @@
+.contact-section
+  padding-top: 28px
+  background-color: #fff
+  .title-block
+    margin-bottom: 35px
+  &__info
+    color: #222222
+    font: 400 15px/170% 'Open Sans', sans-serif
+    margin-bottom: 30px
+  &__map
+    position: relative
+    overflow: hidden
+    width: 100%
+    .ymaps-2-1-79-controls__control_toolbar,
+    .ymaps-2-1-79-map-copyrights-promo
+      display: none
+    .container
+      position: relative
+
+.map-placemark-area
+  position: absolute
+  pointer-events: none
+  z-index: 10
+  top: 72px
+  left: 30px
+  @media all and ($mobile)
+    position: relative
+    top: 0
+    left: 0
+    margin-left: -15px
+    margin-right: -15px
+
+.map-placemark
+  pointer-events: auto
+  padding: 20px
+  max-width: 350px
+  width: 100%
+  background-color: #ffffff
+  border-radius: 10px
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15)
+  @media all and ($mobile)
+    border-radius: 0
+    max-width: none
+  &__header
+    margin-bottom: 17px
+    display: flex
+    align-items: flex-end
+  &__logo
+    width: 100%
+    max-width: 120px
+    flex: 0 0 120px
+  &__body
+    display: flex
+    flex-direction: column
+  &__contact
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+  &__icon-area
+    flex: 0 0 20px
+    margin-right: 10px
+    display: flex
+    justify-content: flex-start
+  &__icon
+    position: relative
+  &__text
+    text-decoration-line: none
+    font-size: 15px
+    font-weight: 400
+    line-height: 21px
+    color: $text
+    span
+      text-decoration: underline
+
+@media all and ($middle)
+  #map
+    height: 320px !important
+
+@media all and ($mobile)
+  .contact-section
+    &__info
+      margin-bottom: 20px
+  .map-placemark-area
+    width: auto
+    padding-left: 0 !important
+    padding-right: 0 !important
+    top: 10px
+    transform: translate(0, 0)
+    left: auto
+    position: relative
+  .map-placemark
+    max-width: 100%
+    border-radius: 0

@@ -1,0 +1,457 @@
+*
+  box-sizing: border-box
+
+.container
+  display: grid
+  max-width: 1170px
+  padding-left: 30px
+  padding-right: 30px
+  margin: 0 auto
+  min-width: 320px
+  @media all and ($mobile)
+    padding-left: 15px
+    padding-right: 15px
+body
+  font-family: "Lato", sans-serif
+  line-height: 1.3
+  margin: 0
+  min-height: 100vh
+  position: relative
+
+ul
+  list-style-type: none
+  padding-inline-start: 0
+a,
+p,
+li,
+ul,
+span
+  margin-block-start: 0
+  margin-block-end: 0
+  margin-inline-start: 0px
+  margin-inline-end: 0px
+
+h1, h2
+  margin-block-start: 0
+  margin-block-end: 0
+
+button
+  padding-block: 0
+  padding-inline: 0
+  border-width: 0
+  cursor: pointer
+  background: transparent
+
+textarea
+  resize: none
+  border: 1px solid #AAB2C2
+  border-radius: 5px
+  padding: 8px 10px
+  color: #000
+  &::placeholder
+    color: #757575
+    font-size: 14px
+    font-weight: 400
+  &:focus-visible
+    outline: none
+
+input
+  border: 1px solid #AAB2C2
+  border-radius: 5px
+  padding: 8px 10px
+  color: #000
+  &::placeholder
+    color: #757575
+    font-size: 14px
+    font-weight: 400
+  &:focus-visible
+    outline: none
+
+a
+  transition: color $anim
+  cursor: pointer
+  &:active, &:focus, &:hover
+    color: $orange
+
+img
+  max-width: 100%
+// .swiper-area
+//   position: relative
+//   padding-bottom: 30px
+.title-wrapper
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 20px
+  align-items: center
+  justify-content: space-between
+  padding-bottom: 40px
+  @media all and ($middle)
+    padding-bottom: 30px
+  @media all and ($xs)
+    padding-bottom: 20px
+    grid-template-columns: 1fr
+    justify-content: start
+    gap: 10px
+  &__simple
+    grid-template-columns: auto
+  &__count
+    grid-template-columns: auto auto
+    justify-items: start
+    align-items: baseline
+    justify-content: start
+    align-content: center
+    gap: 16px
+    .title
+      position: relative
+      &::before
+        content: ""
+        position: absolute
+        width: 2px
+        height: 32px
+        background: #AAB2C2
+        right: -10px
+        top: 19px
+        @media all and ($table)
+          height: 30px
+          top: 13px
+        @media all and ($mobile)
+          height: 24px
+          top: 7px
+    &--search
+      .title
+        color: #000
+        font-size: 24px
+        &::before
+          height: 20px
+          top: 10px
+        &__count
+          color: #000
+          font-size: 14px
+.title
+  color: #3B454E
+  font-size: 44px
+  font-weight: 700
+  letter-spacing: -1px
+  @media all and ($table)
+    font-size: 36px
+  @media all and ($mobile)
+    font-size: 24px
+  &__count
+    color: #000
+    font-size: 17px
+    font-weight: 400
+    position: relative
+    @media all and ($mobile)
+      font-size: 15px
+
+.section-style
+  padding-top: 40px
+  padding-bottom: 40px
+  @media all and ($mobile)
+    padding-top: 30px
+    padding-bottom: 30px
+
+.title-link
+  color: #3B454E
+  font-size: 14px
+  font-weight: 400
+  text-decoration-line: underline
+  justify-self: end
+  transition: color $anim
+  &:active, &:focus, &:hover
+    color: #FF8F51
+  @media all and ($xs)
+    justify-self: start
+
+.d-block
+  display: block !important
+
+.dotted
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 1px
+    top: 50%
+    transform: translateY(-50%)
+    background: url(../../assets/img/line.svg)
+    z-index: 0
+  &__bg
+    padding: 0 10px
+    background: #fff
+    z-index: 10
+    &:nth-of-type(odd)
+      padding-left: 0
+    &:nth-of-type(even)
+      padding-right: 0
+    &--count
+      padding-right: 0
+      padding-left: 10px !important
+
+.checkbox
+  &__input
+    display: none
+    &:checked~ .checkbox__custom
+      background: $orange
+      border-color: $orange
+    &:checked~ .checkbox__custom::before
+      opacity: 1
+      border-color: $orange
+  &__text
+    cursor: pointer
+    display: inline-block
+    font-weight: 400
+    font-size: 13px
+    line-height: 110%
+    color: #000
+    transition: border 0.3s ease-in-out
+    &:hover ~ .checkbox__custom
+      border: 1px solid $orange
+    &:focus ~ .checkbox__custom
+      border: 1px solid $orange
+    &:active ~ .checkbox__custom
+      border: 1px solid $orange
+    &--link
+      display: inline
+      text-decoration-line: underline
+      color: #2F5379
+      padding-left: 0
+  &__custom
+    cursor: pointer
+    display: block
+    position: relative
+    width: 17px
+    min-width: 17px
+    height: 17px
+    border: 1px solid #D6DFE6
+    background: #EBEBEB
+    border-radius: 3px
+    text-align: center
+    transition: border 0.3s ease-in-out
+    &:hover
+      border: 1px solid $orange
+    &:focus
+      border: 1px solid $orange
+    &:active
+      border: 1px solid $orange
+    &::before
+      content: url(../../assets/img/check.svg)
+      text-align: center
+      position: absolute
+      top: 50%
+      left: 50%
+      opacity: 0
+      transform: translate(-50%, -50%)
+      transition: opacity 0.3s ease-in-out
+  &__block
+    display: flex
+
+.mob-n-d
+  @media all and ($mobile)
+    display: none !important
+
+.error
+  position: relative
+  &__img-box
+    position: absolute
+    top: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+    background: url(../../assets/img/404.jpg)
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+  &__box
+    height: 100%
+    display: grid
+    gap: 10px
+    justify-content: center
+    justify-items: center
+    align-content: center
+    padding: 10px 0
+  &__text-top
+    color: #FFF
+    font-size: 26px
+    font-weight: 700
+    @media all and ($mobile)
+      font-size: 21px
+  &__text-bottom
+    color: #FFF
+    font-size: 24px
+    font-weight: 700
+    text-align: center
+    @media all and ($mobile)
+      font-size: 21px
+  &__title
+    color: #FFF
+    font-size: 220px
+    font-weight: 700
+    @media all and ($mobile)
+      font-size: 150px
+  &__btn
+    color: #000
+    font-size: 16px
+    font-weight: 600
+    padding: 10px 60px
+    border-radius: 5px
+    background: #FFF
+    text-decoration: none
+    margin-top: 40px
+    @media all and ($mobile)
+      margin-top: 20px
+
+.noresults
+  margin-top: 50px
+  .container
+    align-content: start
+  .title-wrapper
+    align-content: start
+  &__box
+    display: grid
+    gap: 30px
+    justify-items: center
+  &__btn
+    color: #FFF
+    font-size: 14px
+    font-weight: 700
+    padding: 7px 50px
+    border-radius: 5px
+    background: $orange
+    justify-self: center
+    transition: background $anim
+    text-decoration: none
+    &:active, &:hover, &:focus
+      background: #D9570E
+      color: #fff
+  &__text
+    color: #000
+    font-size: 15px
+    font-weight: 400
+
+////политика
+
+.privacy
+  padding-top: 30px
+  padding-bottom: 70px
+  &__title
+    color: #000
+    font-size: 21px
+    font-weight: 600
+    margin-bottom: 20px
+    margin-top: 30px
+    &:first-of-type
+      margin-top: 0
+    @media all and ($mobile)
+      font-size: 18px
+      margin-bottom: 15px
+      margin-top: 20px
+  &__text
+    color: #000
+    font-size: 15px
+    font-weight: 400
+    margin-bottom: 20px
+    @media all and ($mobile)
+      margin-bottom: 15px
+
+///контакты
+
+.contacts-page
+  padding-top: 30px
+  &__text
+    color: #000
+    font-size: 17px
+    font-weight: 400
+    @media all and ($table)
+      font-size: 16px
+    @media all and ($mobile)
+      font-size: 15px
+
+//сортировка 
+.sorting
+  padding-top: 20px
+  display: grid
+  grid-template-columns: 255px 1fr auto auto
+  padding-bottom: 10px
+  border-bottom: 1px solid #E5E5E5
+  gap: 10px 30px
+  align-items: baseline
+  justify-content: space-between
+  @media all and ($middle)
+    grid-template-columns: 255px 1fr auto
+  @media all and ($table)
+    grid-template-columns: auto auto auto
+    gap: 10px 15px
+  @media all and ($mobile)
+    grid-template-columns: 1fr
+    padding-top: 0
+  &__title
+    color: #212121
+    font-size: 14px
+    font-weight: 400
+  &__btn
+    color: #666
+    font-size: 14px
+    font-weight: 400
+    background: none
+    transition: color $anim
+    &:active, &:focus, &:hover
+      color: #000
+    &--card.active .sorting__btn-img path
+      fill: #2F5379
+  &__btn.active
+    color: #000
+    text-align: center
+    font-size: 14px
+    font-weight: 600
+  &__container
+    display: grid
+    grid-auto-flow: column
+    align-items: center
+    justify-items: start
+    justify-content: start
+    gap: 15px
+    @media all and ($table)
+      gap: 10px
+    &--showing
+      @media all and ($middle)
+        grid-row: 2/3
+        grid-column: 2/3
+      @media all and ($table)
+        grid-column: 1/3
+      @media all and ($mobile)
+        grid-column: 1/2
+        grid-row: 1/2
+    &--view
+      @media all and ($mobile)
+        display: none
+    &--sort
+      @media all and ($mobile)
+        p
+          grid-column: 1/2
+          grid-row: 1/2
+        button
+          grid-row: 2/3
+    &:last-of-type
+      @media all and ($middle)
+        justify-items: end
+  &__container-list
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+  &__container-item
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      height: 12px
+      width: 1px
+      background: #666
+      left: -6px
+      top: 50%
+      transform: translateY(-50%)
+    &:first-child::before
+      display: none
+  .title-wrapper
+    padding: 0 !important

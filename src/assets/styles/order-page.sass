@@ -1,0 +1,254 @@
+.order-page
+  padding-top: 30px
+  &__cart
+    padding-bottom: 50px
+    border-bottom: 1px solid #E5E5E5
+    @media all and ($mobile)
+      padding-bottom: 20px
+      border: none
+  &__registration
+    padding-top: 30px
+    .title-wrapper
+      padding-bottom: 0
+  &__registration-block
+    padding-top: 20px
+  &__registration-subtitle
+    color: #3B454E
+    font-size: 26px
+    font-weight: 700
+    letter-spacing: -1px
+    padding-bottom: 20px
+    @media all and ($mobile)
+      font-size: 21px
+    span
+      color: #2C537C
+      font-family: 'Roboto', 'Lato', sans-serif
+      font-size: 30px
+      font-weight: 700
+      @media all and ($mobile)
+        font-size: 24px
+  &__card-item
+    padding-top: 20px
+    padding-bottom: 20px
+    border-top: 1px solid #AAB2C2
+  &__all-price
+    display: grid
+    grid-auto-flow: column
+    padding-top: 5px
+    padding-bottom: 10px
+    border-radius: 3px
+    background: #ECEDEF
+    justify-items: center
+    justify-content: center
+    align-items: center
+    gap: 10px
+  &__all-price-text
+    color: #2C537C
+    font-family: 'Roboto', 'Lato', sans-serif
+    font-size: 22px
+    font-weight: 700
+    span
+      color: #585858
+      font-family: 'Lato', sans-serif
+      font-size: 22px
+      font-weight: 400
+      text-transform: uppercase
+  &__form-box
+    padding: 20px 0
+    border-top: 1px solid #E5E5E5
+    border-bottom: 1px solid #E5E5E5
+  &__form
+    display: grid
+    grid-template-areas: "fio tel mail" "comment comment comment" "text check check" "desc desc desc" "btn btn btn"
+    gap: 20px
+    @media all and ($mobile)
+      grid-template-areas: "fio" "tel" "mail" "comment" "text" "check" "btn"
+  &__form-fio
+    grid-area: fio
+  &__form-tel
+    grid-area: tel
+  &__form-mail
+    grid-area: mail
+  &__form-comment
+    grid-area: comment
+  &__form-text
+    grid-area: text
+    @media all and ($mobile)
+      margin-top: -10px
+  &__form-check
+    grid-area: check
+    justify-self: end
+    @media all and ($table)
+      justify-self: start
+  &__form-desc
+    grid-area: desc
+    @media all and ($mobile)
+      display: none
+  &__form-btn
+    grid-area: btn
+    padding: 10px 105px
+    border-radius: 5px
+    background: #EA5F12
+    color: #FFF
+    font-size: 16px
+    font-weight: 700
+    justify-self: center
+    transition: background $anim
+    &:active, &:focus, &:hover
+      background: #D9570E
+    @media all and ($mobile)
+      padding: 10px
+      justify-self: stretch
+  &__form-item
+    display: grid
+    gap: 10px
+    label
+      color: #666
+      font-size: 12px
+      font-weight: 600
+      text-transform: uppercase
+    input, textarea
+      transition: border $anim
+      &:active, &:focus, &:hover
+        border: 1px solid #273D54
+  &__form-text
+    color: #6D6F7C
+    font-size: 12px
+    font-weight: 400
+  &__form-checkbox-text
+    color: #000
+    font-size: 15px
+    font-weight: 400
+    a
+      color: #2F5379
+      text-decoration-line: underline
+  &__form-desc
+    color: #000
+    font-size: 16px
+    font-weight: 400
+  &__payment-list
+    display: grid
+    grid-auto-flow: column
+    justify-content: center
+    justify-items: center
+    gap: 40px
+    padding: 35px 0
+    @media all and ($mobile)
+      display: flex
+      flex-wrap: wrap
+      gap: 20px
+  &__payment-item
+    display: grid
+    gap: 20px
+    justify-items: center
+  &__payment-text
+    color: #000
+    font-size: 13px
+    font-weight: 700
+    text-transform: uppercase
+  &__delivery
+    background: #F4F4F4
+    padding: 20px 0
+  &__delivery-list
+    margin: 30px 0
+    border-radius: 10px
+    background: #FFF
+    padding: 20px
+    display: grid
+    grid-auto-flow: column
+    justify-content: center
+    gap: 20px
+    @media all and ($mobile)
+      display: flex
+      flex-wrap: wrap
+.order-card
+  display: grid
+  grid-template-areas: "img title title del" "img param price price"
+  gap: 10px 30px
+  align-items: center
+  @media all and ($table)
+    grid-template-areas: "title del" "img img" "param param" "price price"
+    gap: 20px
+  &__del
+    grid-area: del
+    justify-self: end
+  &__img-box
+    grid-area: img
+    @media all and ($table)
+      justify-self: center
+  &__title
+    grid-area: title
+    color: #3B454E
+    font-size: 22px
+    font-weight: 700
+    text-decoration: none
+  &__price
+    grid-area: price
+    display: grid
+    grid-auto-flow: column
+    gap: 30px
+    justify-self: end
+    @media all and ($table)
+      justify-self: center
+      margin-top: 20px
+    @media all and ($mobile)
+      grid-auto-flow: row
+      gap: 10px
+      justify-items: center
+    .product-card__desc-title
+      color: #666
+      font-size: 16px
+      font-weight: 400
+  &__price-item
+    display: grid
+    grid-auto-flow: column
+    position: relative
+    justify-content: start
+    align-items: center
+    gap: 5px
+  &__param-list
+    grid-area: param
+    display: grid
+    gap: 15px
+  &__param-item
+    display: grid
+    grid-auto-flow: column
+    gap: 5px
+    justify-content: start
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 100%
+      height: 1px
+      top: 50%
+      transform: translateY(-50%)
+      background: url(../../assets/img/line.svg)
+      z-index: 0
+      display: none
+      @media all and ($table)
+        display: block
+    @media all and ($table)
+      justify-content: space-between
+  &__param-title
+    color: #666
+    font-size: 16px
+    font-weight: 400
+    @media all and ($table)
+      position: relative
+      padding-right: 5px
+      background: #fff
+      z-index: 2
+  &__param-text
+    color: #212121
+    font-size: 16px
+    font-weight: 400
+    @media all and ($table)
+      position: relative
+      padding-left: 5px
+      background: #fff
+      z-index: 2
+    &--art
+      color: #35363A
+      font-size: 14px
+      font-weight: 400

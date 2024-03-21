@@ -1,0 +1,119 @@
+.footer-top
+  background: #2C537C
+  padding: 35px 0
+  &__box
+    display: grid
+    grid-template-areas: "left center right"
+    justify-content: space-between
+    gap: 50px
+    @media all and ($table)
+      grid-template-columns: 1fr 1fr 1fr
+    @media all and ($mobile)
+      grid-template-areas: "left"
+      grid-template-columns: 1fr
+      justify-items: center
+  &__left
+    grid-area: left
+    display: grid
+    justify-items: start
+    gap: 15px
+    @media all and ($mobile)
+      justify-items: center
+  &__center
+    grid-area: center
+    @media all and ($mobile)
+      display: none
+  &__right
+    grid-area: right
+    @media all and ($mobile)
+      display: none
+  &__logo
+    img
+      @media all and ($table)
+        max-width: 210px
+  &__tel-mob
+    display: none
+    font-size: 20px
+    font-weight: 700
+    color: #F6F6F8
+    text-decoration: none
+    span
+      font-weight: 400
+      color: #C9CFE0
+    &:active, &:focus, &:hover
+      text-decoration: underline
+    @media all and ($mobile)
+      display: flex
+  &__left-text
+    color: #fff
+    font-size: 14px
+    font-weight: 400
+    padding-bottom: 10px
+    @media all and ($table)
+      font-weight: 13px
+    @media all and ($mobile)
+      display: none
+  &__left-btn
+    padding: 10px 35px
+    color: #fff
+    font-size: 13px
+    font-weight: 900
+    text-transform: uppercase
+    background: none
+    border-radius: 5px
+    border: 1px solid #FFF
+    transition: background $anim, color $anim
+    &:active, &:focus, &:hover
+      color: $orange
+      background: #fff
+  &__left-link
+    color: #fff
+    font-size: 14px
+    font-weight: 400
+    text-decoration: underline
+    transition: color $anim
+    &:active, &:focus, &:hover
+      color: #FF8F51
+  &__link
+    color: #fff
+    font-size: 15px
+    font-weight: 400
+    text-decoration: none
+    &:active, &:focus, &:hover
+      text-decoration: underline
+    @media all and ($table)
+      font-size: 14px
+  &__contact
+    text-decoration: none
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    align-items: center
+    span
+      color: #fff
+      font-size: 15px
+      font-weight: 400
+      text-decoration: none
+      transition: font-weight $anim
+      @media all and ($table)
+        font-size: 14px
+    &:active span, &:focus span, &:hover span
+      font-weight: 700
+  &__nav-title
+    font-size: 16px
+    font-weight: 800
+    text-transform: uppercase
+    color: #fff
+    padding-bottom: 30px
+  &__list
+    display: grid
+    gap: 20px
+    justify-items: start
+
+.footer-btm
+  padding: 15px 0
+  background: #F4F4F4
+  &__text
+    font-size: 12px
+    font-weight: 400
+    color: #7E7E7E

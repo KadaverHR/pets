@@ -1,0 +1,66 @@
+.paginations
+  display: grid
+  grid-template-columns: auto auto
+  gap: 10px
+  justify-content: space-between
+  padding-bottom: 20px
+  @media all and ($mobile)
+    grid-template-columns: 1fr
+    justify-items: center
+  &__top
+    display: grid
+    grid-column: 1/3
+    @media all and ($mobile)
+      grid-column: 1/2
+      justify-self: stretch
+  &__top-btn
+    padding-top: 8px
+    padding-bottom: 8px
+    border-radius: 5px
+    background: #ECEDEF
+    color: #212121
+    font-size: 14px
+    font-weight: 700
+  &__left
+    display: grid
+    grid-auto-flow: column
+    gap: 20px
+    align-items: center
+  &__left-btn
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    align-items: center
+    &:active .paginations__left-btn-text, &:hover .paginations__left-btn-text, &:focus .paginations__left-btn-text
+      color: #EA5F12
+    &:active .paginations__left-img path, &:hover .paginations__left-img path, &:focus .paginations__left-img path
+      fill: #EA5F12
+  &__left-img path
+    transition: fill $anim
+  &__right
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    align-items: center
+  &__left-btn-text
+    color: #38454E
+    font-size: 13px
+    font-weight: 400
+    transition: color $anim
+  &__right-btn
+    padding: 5px 8px
+    color: #38454E
+    font-size: 13px
+    font-weight: 400
+    transition: color $anim
+    &:active, &:hover, &:focus
+      color: #EA5F12
+  &__right-btn.active
+    border-radius: 3px
+    background: #ECEDEF
+    color: #EA5F12
+    font-weight: 700
+  &__right-btn.disabled
+    cursor: auto
+    &:active, &:hover, &:focus
+      color: #38454E

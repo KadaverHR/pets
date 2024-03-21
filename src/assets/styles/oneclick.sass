@@ -1,0 +1,78 @@
+.oneclick
+  padding: 30px
+  &__title
+    color: #3B454E
+    font-size: 36px
+    font-weight: 700
+    letter-spacing: -1px
+
+    span
+      font-size: 26px
+      font-weight: 400
+      text-transform: uppercase
+  &__form
+    margin-top: 25px
+    border-radius: 5px
+    border: 1px solid #AAB2C2
+    .order-card
+      padding: 20px
+      grid-template-areas: "img title title" "img param price"
+      grid-template-columns: 130px auto auto
+      @media all and ($table)
+        grid-template-areas: "title" "img" "param" "price"
+        grid-template-columns: 1fr
+      &__price
+        grid-auto-flow: row
+        gap: 10px
+        padding-top: 20px
+      &__param-list
+        padding-top: 20px
+  &__registation
+    padding: 20px
+    padding-top: 20px
+    border-top: 1px solid #AAB2C2
+    display: grid
+    grid-template-areas: "tel fio fio" "text check check" "prev summ btn"
+    gap: 20px
+    align-items: center
+    @media all and ($table)
+      grid-template-areas: "tel" "fio" "text" "check" "summ" "btn" "prev"
+    .order-page__form-btn
+      justify-self: end
+      padding: 10px 39px
+      @media all and ($table)
+        justify-self: stretch
+    .order-page__form-check
+      justify-self: start
+  &__prev
+    grid-area: prev
+    justify-self: start
+    padding: 10px 29px
+    color: #EA5F12
+    font-size: 16px
+    font-weight: 700
+    border-radius: 5px
+    border: 1.3px solid #EA5F12
+    @media all and ($table)
+      justify-self: stretch
+  &__all-price
+    grid-area: summ
+    display: grid
+    grid-auto-flow: column
+    gap: 10px
+    justify-content: start
+    align-items: baseline
+  &__all-price-title
+    color: #666
+    font-size: 18px
+    font-weight: 600
+    text-transform: uppercase
+  &__all-price-text
+    color: #2C537C
+    font-size: 26px
+    font-weight: 900
+    span
+      color: #585858
+      font-size: 26px
+      text-transform: uppercase
+      font-weight: 400
