@@ -139,7 +139,7 @@ $(document).ready(function () {
       myMap = new ymaps.Map('map', {
         // При инициализации карты обязательно нужно указать
         // её центр и коэффициент масштабирования.
-        center: destinations['MSK'], 
+        center: destinations['MSK'],
         zoom: 13.5
       });
 
@@ -159,85 +159,89 @@ $(document).ready(function () {
 
 
   // меню
+  // try {
+  //   let catalogButton = document.querySelector("#hamburger-menu");
+  //   let catalogDrop = document.querySelector("#catalog-drop");
+  //   let openMenu = false;
 
-  let catalogButton = document.querySelector("#hamburger-menu");
-  let catalogDrop = document.querySelector("#catalog-drop");
-  let openMenu = false;
+  //   catalogButton.addEventListener("click", (e) => {
+  //     changeCatalogDrop(e);
+  //   });
 
-  catalogButton.addEventListener("click", (e) => {
-    changeCatalogDrop(e);
-  });
+  //   const changeCatalogDrop = (e) => {
+  //     e.stopPropagation();
+  //     changeCatalogDropType(openMenu);
+  //   };
+  //   const changeCatalogDropType = (open_menu) => {
+  //     if (open_menu) {
+  //       catalogButton.classList.remove("catalog-button--active");
+  //       catalogDrop.classList.remove("d-block");
+  //       openMenu = false;
+  //     } else {
+  //       catalogButton.classList.add("catalog-button--active");
+  //       catalogDrop.classList.add("d-block");
+  //       openMenu = true;
+  //     }
+  //   };
+  //   let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
 
-  const changeCatalogDrop = (e) => {
-    e.stopPropagation();
-    changeCatalogDropType(openMenu);
-  };
-  const changeCatalogDropType = (open_menu) => {
-    if (open_menu) {
-      catalogButton.classList.remove("catalog-button--active");
-      catalogDrop.classList.remove("d-block");
-      openMenu = false;
-    } else {
-      catalogButton.classList.add("catalog-button--active");
-      catalogDrop.classList.add("d-block");
-      openMenu = true;
-    }
-  };
-  let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
+  //   const changeTireSelectionBlock = (e) => {
+  //     tireSelectionItems.forEach((item) => {
+  //       let tireSelectionItemHeader = item.querySelector(
+  //         ".tire-selection-item__header"
+  //       );
+  //       tireSelectionItemHeader.addEventListener("click", () => {
+  //         tireSelectionItemHeader.parentNode.classList.toggle(
+  //           "tire-selection-item--active"
+  //         );
+  //       });
+  //     });
+  //   };
 
-  const changeTireSelectionBlock = (e) => {
-    tireSelectionItems.forEach((item) => {
-      let tireSelectionItemHeader = item.querySelector(
-        ".tire-selection-item__header"
-      );
-      tireSelectionItemHeader.addEventListener("click", () => {
-        tireSelectionItemHeader.parentNode.classList.toggle(
-          "tire-selection-item--active"
-        );
-      });
-    });
-  };
+  //   changeTireSelectionBlock();
+  // } catch (error) {
 
-  changeTireSelectionBlock();
+  // }
+
 
   /////мобильное меню
 
-  var acc = document.getElementsByClassName("accordion");
-  var i;
+  // var acc = document.getElementsByClassName("accordion");
+  // var i;
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
+  // for (i = 0; i < acc.length; i++) {
+  //   acc[i].addEventListener("click", function () {
+  //     this.classList.toggle("active");
+  //     var panel = this.nextElementSibling;
+  //     if (panel.style.maxHeight) {
+  //       panel.style.maxHeight = null;
+  //     } else {
+  //       panel.style.maxHeight = panel.scrollHeight + "px";
+  //     }
+  //   });
+  // }
   // Бургер
-  let burger = document.querySelector('#hamburger-menu-mob');
-  let menu = document.querySelector('#catalog-drop-mob');
-  let menuLinks = menu.querySelectorAll('.catalog-link');
-  let closeMenu = menu.querySelector('#close-mob')
+  // let burger = document.querySelector('#hamburger-menu-mob');
+  // let menu = document.querySelector('#catalog-drop-mob');
+  // let menuLinks = menu.querySelectorAll('.catalog-link');
+  // let closeMenu = menu.querySelector('#close-mob')
 
-  burger.addEventListener('click', function () {
-    menu.classList.toggle('active');
-    document.body.classList.toggle('stop-scroll');
-  });
+  // burger.addEventListener('click', function () {
+  //   menu.classList.toggle('active');
+  //   document.body.classList.toggle('stop-scroll');
+  // });
 
-  closeMenu.addEventListener('click', function () {
-    menu.classList.toggle('active');
-    document.body.classList.toggle('stop-scroll');
-  });
+  // closeMenu.addEventListener('click', function () {
+  //   menu.classList.toggle('active');
+  //   document.body.classList.toggle('stop-scroll');
+  // });
 
-  menuLinks.forEach(function (el) {
-    el.addEventListener('click', function () {
-      menu.classList.remove('active');
-      document.body.classList.remove('stop-scroll')
-    })
-  });
+  // menuLinks.forEach(function (el) {
+  //   el.addEventListener('click', function () {
+  //     menu.classList.remove('active');
+  //     document.body.classList.remove('stop-scroll')
+  //   })
+  // });
 
 
 

@@ -5,6 +5,9 @@
     grid-auto-flow: column
     gap: 20px
     padding: 13px 0
+    justify-content: end
+    align-items: center
+    justify-items: end
   &__menu
     display: grid
     grid-auto-flow: column
@@ -63,13 +66,10 @@
     font-weight: 400
     text-decoration: none
     display: grid
-    span
-      text-decoration: underline
-    &--font
-      font-family: 'Roboto', 'Lato', sans-serif
-      p
-        @media all and ($table)
-          display: none
+    text-decoration: none
+    p
+      @media all and ($table)
+        display: none
     &--text-mob
       @media all and ($mobile)
         display: block !important
@@ -77,7 +77,14 @@
       @media all and ($table)
         display: none
     &:active, &:hover, &:focus
-      text-decoration: underline
+      text-decoration: none
+  &__social
+    display: grid
+    grid-auto-flow: column
+    gap: 30px
+    justify-items: end
+    justify-content: end
+    align-items: center
   &__order-img-mob
     display: none
     @media all and ($table)
@@ -88,12 +95,13 @@
   background: #F4F4F4
   &__area
     display: grid
-    grid-template-areas: "logo catalog search cart"
-    grid-template-columns: auto auto 1fr auto
+    grid-template-areas: "logo catalog search lk cart"
+    grid-template-columns: auto 1fr auto auto auto
     align-items: center
-    gap: 20px
+    gap: 30px
     justify-content: space-between
-    padding: 16px 0 12px 0
+    padding: 12px 0
+    align-items: end
     @media all and ($table)
       grid-template-areas: "logo cart"
       padding: 12px 0
@@ -109,12 +117,14 @@
     grid-area: catalog
   &__cart
     grid-area: cart
+    padding-bottom: 15px
     @media all and ($mobile)
       justify-self: end
   &__search
     grid-area: search
     max-width: 496px
     width: 100%
+    padding-bottom: 15px
     @media all and ($table)
       display: none
 
@@ -123,6 +133,9 @@
       max-width: 244px
       @media all and ($mobile)
         max-width: 169px
+  &__search-img
+    display: grid
+    align-items: end
   &__catalog
     display: grid
     justify-items: start
@@ -157,33 +170,59 @@
     font-weight: 600
     cursor: pointer
     text-transform: uppercase
+  &__nav-list
+    padding-bottom: 15px
+    display: grid
+    grid-auto-flow: column
+    gap: 40px
+    justify-content: center
+  &__nav-link
+    font-size: 12px
+    font-weight: 700
+    text-decoration: none
+    text-transform: uppercase
+  &__lk
+    grid-column: lk
+    display: grid
+    padding-bottom: 15px
+  &__lk-link
+    display: grid
+    grid-auto-flow: column
+    gap: 6px
+    align-items: center
+    text-decoration: none
+  &__lk-text
+    font-size: 12px
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
   &__cart-box
     display: grid
     grid-auto-flow: column
-    align-items: center
-    gap: 15px
+    align-items: end
+    gap: 20px
     position: relative
     @media all and ($mobile)
       gap: 5px
   &__cart-price
     position: relative
-    &::before
-      content: ""
-      position: absolute
-      width: 1px
-      height: 100%
-      left: -7px
-      top: 50%
-      transform: translateY(-50%)
-      background: #7E808B
-      @media all and ($mobile)
-        display: none
+    // &::before
+    //   content: ""
+    //   position: absolute
+    //   width: 1px
+    //   height: 100%
+    //   left: -7px
+    //   top: 50%
+    //   transform: translateY(-50%)
+    //   background: #7E808B
+    //   @media all and ($mobile)
+    //     display: none
     p
       color: #000
-      font-size: 17px
+      font-size: 14px
       font-weight: 700
       @media all and ($mobile)
-        font-size: 15px
+        font-size: 14px
       span
         color: #585858
         font-size: 18px
@@ -191,6 +230,24 @@
         text-transform: uppercase
         @media all and ($mobile)
           font-size: 15px
+  &__cart-img-box
+    position: relative
+    display: grid
+  &__cart-image-count
+    position: absolute
+    top: -15px
+    right: -14px
+    background: $orange
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    font-size: 11px
+    line-height: 7px
+    font-weight: 700
+    color: #fff
+    display: flex
+    justify-content: center
+    align-items: center
   &__cart-image
     position: relative
   &__navigation-item

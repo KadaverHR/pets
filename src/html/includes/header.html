@@ -2,25 +2,37 @@
   <div class="header-top">
     <div class="container">
       <div class="header-top__box">
-  
+
         <ul class="header-top__contacts">
           <li class="header-top__contacs-item">
-            <a type="tel" class="header-top__order-link header-top__order-link--font" href="tel:+74862630023">
-              <img class="mob-n-d svg header-top__order-img-mob" src="../../assets/img/tel-footer.svg">
+            <a type="tel" class="header-top__order-link header-top__order-link--font" href="tel:+1 111 111-11-11">
               <p class="header-top__order-link--text-mob">
-                +7 (4862) 63-00-23
+                +1 111 111-11-11
               </p>
             </a>
           </li>
           <li class="header-top__contacs-item">
-            <a type="mailto:konstantin.glushkov@mtkrosberg.ru"
-              class="header-top__order-link header-top__order-link--font" href="tel:+74862630023">
-              <img class="svg header-top__order-img-mob" src="../../assets/img/mail-footer.svg">
+            <a class="header-top__order-link header-top__order-link--font" href="mailto:info@info.ru">
               <p>
-                sale<span>@tornadooil.ru</span>
+                info@info.ru
               </p>
             </a>
           </li>
+          <li class="header-top__contacs-item">
+            <p class="header-top__order-link">
+              info@info.ru
+            <p>
+          </li>
+        </ul>
+
+        <div class="header-top__social">
+          <a class="header-top__social-link" href="">
+            <img class="svg" src="../../assets/img/wa.svg" alt="wa">
+          </a>
+          <a class="header-top__social-link" href="">
+            <img class="svg" src="../../assets/img/tg.svg" alt="tg">
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -36,6 +48,28 @@
           </a>
         </div>
 
+        <nav class="header-btm__nav-list catalog">
+          <a href="" class="header-btm__nav-link">
+            Собаки
+          </a>
+          <a href="" class="header-btm__nav-link">
+            Кошки
+          </a>
+          <a href="" class="header-btm__nav-link">
+            Акции
+          </a>
+          <a href="" class="header-btm__nav-link">
+            Доставка и оплата
+          </a>
+          <a href="" class="header-btm__nav-link">
+            О нас
+          </a>
+          <a href="" class="header-btm__nav-link">
+            Контакты
+          </a>
+        </nav>
+
+        <!-- 
         <div class="header-btm__catalog">
           <div class="header-btm__navigation-item mob-n-d" id="hamburger-menu">
             <button class="button catalog-button ">
@@ -43,11 +77,11 @@
               <img class=" header-btm__navigation-menu--close" src="../../assets/img/menu2.svg" alt="Меню">
             </button>
             <span class="header-btm__catalog-title mob-n-d">Каталог товаров</span>
-          </div>
+          </div> -->
 
 
 
-          <div class="catalog-drop" id="catalog-drop" data-drop>
+        <!-- <div class="catalog-drop" id="catalog-drop" data-drop>
             <nav class="catalog-drop__container ">
               <ul class="catalog-navigation">
                 <li class="catalog-navigation__item">
@@ -75,12 +109,15 @@
             </nav>
 
 
-          </div>
+          </div> -->
 
-        </div>
+        <!-- </div> -->
 
         <div class="header-btm__search">
-          <div id="search" class="search-area">
+          <button class="button sheader-btm__search-img">
+            <img src="../../assets/img/search.svg" alt="Найти" />
+          </button>
+          <div id="search" style="display: none;" class="search-area">
             <form class="search">
               <input type="text" class="search__input" value="" placeholder="Поиск" />
               <button class="button search__button" type="submit">
@@ -90,9 +127,23 @@
           </div>
         </div>
 
+        <div class="header-btm__lk">
+          <a class="header-btm__lk-link" href="">
+            <img src="../../assets/img/lk.svg" alt="Вход">
+            <p class="header-btm__lk-text">
+              Вход
+            </p>
+          </a>
+        </div>
+
+
         <div class="header-btm__cart">
           <div class="header-btm__cart-box">
-            <img class="header-btm__cart-image" src="../../assets/img/cart.svg" alt="Корзина" width="17" height="17" />
+            <div class="header-btm__cart-img-box">
+              <img class="header-btm__cart-image" src="../../assets/img/cart.svg" alt="Корзина" width="17"
+                height="17" />
+              <p class="header-btm__cart-image-count">12</p>
+            </div>
             <div class="header-btm__cart-price">
               <p>12 345 <span>₽</span></p>
             </div>
@@ -127,7 +178,7 @@
       </div>
     </div>
   </div>
-  <div class="catalog-mobile__container container" id="catalog-drop-mob" data-drop>
+  <!-- <div class="catalog-mobile__container container" id="catalog-drop-mob" data-drop>
     <div class="catalog-mobile__logo">
       <a href="http://">
         <img src="../../assets/img/logo-footer.svg" alt="Logo">
@@ -175,7 +226,7 @@
         <a class="catalog-mobile__menu-link" href="http://">Контакты</a>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
