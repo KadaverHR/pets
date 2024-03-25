@@ -131,7 +131,7 @@ $(document).ready(function () {
     // в этой версии координаты просто элементы массива (и они поменяны местами)
     if (document.getElementById('map') === null) return
     let destinations = {
-      'OR': [53.014796, 36.15], //орел
+      'MSK': [55.755864, 37.617698], //орел
     },
 
       // Создание экземпляра карты и его привязка к контейнеру с
@@ -139,17 +139,17 @@ $(document).ready(function () {
       myMap = new ymaps.Map('map', {
         // При инициализации карты обязательно нужно указать
         // её центр и коэффициент масштабирования.
-        center: destinations['OR'], // Московское шоссе, д.173
+        center: destinations['MSK'], 
         zoom: 13.5
       });
 
     // Добавление метки
     // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
-    let myPlacemark = new ymaps.Placemark([53.014796, 36.156400], {}, {
+    let myPlacemark = new ymaps.Placemark([55.847861, 37.650055], {}, {
       //опции
       iconLayout: 'default#image',
-      iconImageHref: '../assets/img/map-icon.svg',
-      iconImageSize: [54, 77],
+      iconImageHref: '../assets/img/map-icon.png',
+      iconImageSize: [44, 61],
       iconImageOffset: [-27, -54],
     });
 
@@ -241,46 +241,6 @@ $(document).ready(function () {
 
 
 
-
-  //////
-
-  class Select {
-    constructor(el, placeholder) {
-      this.el = el;
-      this.placeholder = placeholder;
-    }
-    init() {
-      $(this.el)
-        .select2({
-          theme: "select-filter__theme",
-          dropdownCssClass: "select-filter__drop",
-          selectionCssClass: "select-filter__selection",
-          allowClear: true,
-          closeOnSelect: true,
-          dropdownAutoWidth: false,
-          placeholder: this.placeholder,
-          language: {
-            noResults: function (params) {
-              return "Нет результатов";
-            },
-          },
-        })
-        .on("select2:open", function (e) {
-          $(".select2-search__field").attr("placeholder", "Поиск");
-        });
-    }
-  }
-
-  const selectStructure = new Select($(".select-structure"), "Выберите состав");
-  const selectViscosity = new Select($(".select-viscosity"), "Выберите вязкость");
-  const selectVolume = new Select($(".select-volume"), "Выберите объем");
-  const selectBrand = new Select($(".select-brand"), "Выберите производителя");
-
-
-  selectStructure.init();
-  selectViscosity.init();
-  selectVolume.init();
-  selectBrand.init();
 
   //слайдер баннер 
 
@@ -529,7 +489,6 @@ $(document).ready(function () {
     $(".range-price").slider("values", 1)
   );
 
-  console.log("hty");
 
 
 
