@@ -186,15 +186,15 @@ $(document).ready(function () {
     //   changeCatalogDropType(openMenu);
     // };
     // const changeCatalogDropType = (open_menu) => {
-      // if (open_menu) {
-      //   catalogButton.classList.remove("catalog-button--active");
-      //   catalogDrop.classList.remove("d-block");
-      //   openMenu = false;
-      // } else {
-      // catalogButton.classList.add("catalog-button--active");
-      // catalogDrop.classList.add("d-block");
-      // openMenu = true;
-      // }
+    // if (open_menu) {
+    //   catalogButton.classList.remove("catalog-button--active");
+    //   catalogDrop.classList.remove("d-block");
+    //   openMenu = false;
+    // } else {
+    // catalogButton.classList.add("catalog-button--active");
+    // catalogDrop.classList.add("d-block");
+    // openMenu = true;
+    // }
     // };
 
     // catalogDrop.addEventListener("mouseout", () => {
@@ -537,5 +537,28 @@ $(document).ready(function () {
 
 
 
+
+  let links = document.querySelectorAll('a')
+  let modal = document.getElementById('modal')
+  let modalClose = document.getElementById('modal-close')
+  let modalBody = document.getElementById('modal-body')
+
+  links.forEach(element => {
+    element.addEventListener('click', () => {
+      element.removeAttribute('href')
+      modal.classList.remove('d-n')
+    })
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.classList.add('d-n')
+  })
+
+  $(document).mouseup(function (e) {
+    var container = $(modalBody);
+    if (container.has(e.target).length === 0) {
+      modal.classList.add('d-n')
+    }
+  });
 
 })

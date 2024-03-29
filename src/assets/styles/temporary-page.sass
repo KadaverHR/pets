@@ -30,3 +30,54 @@
       grid-template-columns: auto 1fr
     .title
       grid-column: 1/2
+.d-n
+  display: none !important
+.modal
+  position: fixed
+  width: 100%
+  height: 100%
+  display: grid
+  justify-content: center
+  align-items: center
+  background: rgba(0, 0, 0, 0.82)
+  z-index: 99
+  &__box
+    position: relative
+    background: url(/assets/img/modal.jpg)
+    width: 540px
+    height: 591px
+    border-radius: 20px
+    display: grid
+    grid-auto-flow: column
+    align-content: end
+    padding: 40px 26px
+    grid-template-columns: auto 1fr
+    gap: 20px
+    @media all and ($mobile)
+      width: 100%
+      grid-auto-flow: row
+      grid-template-columns: 1fr
+      justify-content: center
+      justify-items: center
+  &__text-box
+    display: grid
+    gap: 20px
+    justify-items: center
+    justify-content: start
+    p
+      text-align: center
+  &__text
+    font-size: 36px
+    font-weight: 600
+    line-height: 34px
+    letter-spacing: -1px
+    &.orange
+      color: #F86200
+      text-align: center
+      font-size: 26px
+      font-weight: 500
+      line-height: 24px
+  &__close
+    position: absolute
+    right: 20px
+    top: 20px
