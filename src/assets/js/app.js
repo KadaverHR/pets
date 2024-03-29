@@ -164,41 +164,59 @@ $(document).ready(function () {
     let catalogDrop = document.querySelector("#catalog-drop");
     let openMenu = false;
 
-    catalogButton.addEventListener("mouseover", (e) => {
-      changeCatalogDrop(e);
+    catalogButton.addEventListener("mouseover", () => {
+
+      catalogDrop.classList.add("d-block");
+      openMenu = true;
+
+
+
+
+      // changeCatalogDrop(e);
     });
 
-    const changeCatalogDrop = (e) => {
-      e.stopPropagation();
-      changeCatalogDropType(openMenu);
-    };
-    const changeCatalogDropType = (open_menu) => {
-      if (open_menu) {
-        catalogButton.classList.remove("catalog-button--active");
-        catalogDrop.classList.remove("d-block");
-        openMenu = false;
-      } else {
-        catalogButton.classList.add("catalog-button--active");
-        catalogDrop.classList.add("d-block");
-        openMenu = true;
-      }
-    };
-    let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
+    // if (openMenu = true) {
+    //   catalogDrop.classList.add("d-block");
+    // }
 
-    const changeTireSelectionBlock = (e) => {
-      tireSelectionItems.forEach((item) => {
-        let tireSelectionItemHeader = item.querySelector(
-          ".tire-selection-item__header"
-        );
-        tireSelectionItemHeader.addEventListener("click", () => {
-          tireSelectionItemHeader.parentNode.classList.toggle(
-            "tire-selection-item--active"
-          );
-        });
-      });
-    };
 
-    changeTireSelectionBlock();
+
+    // const changeCatalogDrop = (e) => {
+    //   e.stopPropagation();
+    //   changeCatalogDropType(openMenu);
+    // };
+    // const changeCatalogDropType = (open_menu) => {
+      // if (open_menu) {
+      //   catalogButton.classList.remove("catalog-button--active");
+      //   catalogDrop.classList.remove("d-block");
+      //   openMenu = false;
+      // } else {
+      // catalogButton.classList.add("catalog-button--active");
+      // catalogDrop.classList.add("d-block");
+      // openMenu = true;
+      // }
+    // };
+
+    // catalogDrop.addEventListener("mouseout", () => {
+    //   catalogDrop.classList.remove("d-block");
+    // });
+
+    // let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
+
+    // const changeTireSelectionBlock = (e) => {
+    //   tireSelectionItems.forEach((item) => {
+    //     let tireSelectionItemHeader = item.querySelector(
+    //       ".tire-selection-item__header"
+    //     );
+    //     tireSelectionItemHeader.addEventListener("click", () => {
+    //       tireSelectionItemHeader.parentNode.classList.toggle(
+    //         "tire-selection-item--active"
+    //       );
+    //     });
+    //   });
+    // };
+
+    // changeTireSelectionBlock();
   } catch (error) {
 
   }
@@ -513,7 +531,7 @@ $(document).ready(function () {
     searchArea.classList.add('active')
   })
 
-  buttonClose.addEventListener('click', function() {
+  buttonClose.addEventListener('click', function () {
     searchArea.classList.remove('active')
   })
 
