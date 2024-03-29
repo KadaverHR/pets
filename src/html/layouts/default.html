@@ -11,19 +11,30 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
 
+
+  <script defer src="assets/libs/jquery.js"></script>
+  <script defer src="assets/libs/jquery-ui.js"></script>
+  <script defer src="assets/libs/jquery-ui-touch.js"></script>
+  <script defer src="assets/libs/rangeslider.js"></script>
+  <script defer src="assets/libs/aos.js"></script>
+  <script defer src="assets/libs/swiper.js"></script>
+  <script defer src="assets/libs/select2.js"></script>
+  <!-- <script src="assets/libs/popper.js"></script>
+  <script src="assets/libs/tippy.js"></script> -->
+  <script defer src="assets/libs/fancyapps.js"></script>
+  <script defer src="assets/libs/air-datepicker.js"></script>
+  <script defer src="assets/js/app.js"></script>
+
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %} id="body">
 
-  <div class="body-bg">
-
-  </div>
   {% include "html/includes/header.html" %}
 
   <main class="container">
 
-      {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
   </main>
   {% include "html/includes/footer.html" %}
   {% include "html/includes/mob-menu.html" %}
@@ -31,18 +42,6 @@
 
   <!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
 
-  <script src="assets/libs/jquery.js"></script>
-  <script src="assets/libs/jquery-ui.js"></script>
-  <script src="assets/libs/jquery-ui-touch.js"></script>
-  <script src="assets/libs/rangeslider.js"></script>
-  <script src="assets/libs/aos.js"></script>
-  <script src="assets/libs/swiper.js"></script>
-  <script src="assets/libs/select2.js"></script>
-  <!-- <script src="assets/libs/popper.js"></script>
-  <script src="assets/libs/tippy.js"></script> -->
-  <script src="assets/libs/fancyapps.js"></script>
-  <script src="assets/libs/air-datepicker.js"></script>
-  <script src="assets/js/app.js"></script>
 
 
   <script>
