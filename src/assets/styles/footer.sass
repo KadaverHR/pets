@@ -1,9 +1,9 @@
 .footer-top
-  background: #2C537C
+  background: #6F767A
   padding: 35px 0
   &__box
     display: grid
-    grid-template-areas: "left center right"
+    grid-template-areas: "left cat dog right"
     justify-content: space-between
     gap: 50px
     @media all and ($table)
@@ -19,8 +19,12 @@
     gap: 15px
     @media all and ($mobile)
       justify-items: center
-  &__center
-    grid-area: center
+  .cat
+    grid-area: cat
+    @media all and ($mobile)
+      display: none
+  .dog
+    grid-area: dog
     @media all and ($mobile)
       display: none
   &__right
@@ -55,11 +59,10 @@
       display: none
   &__left-btn
     padding: 10px 35px
-    color: #fff
+    color: #312C2B
     font-size: 13px
     font-weight: 900
-    text-transform: uppercase
-    background: none
+    background: #fff
     border-radius: 5px
     border: 1px solid #FFF
     transition: background $anim, color $anim
@@ -76,7 +79,7 @@
       color: #FF8F51
   &__link
     color: #fff
-    font-size: 15px
+    font-size: 16px
     font-weight: 400
     text-decoration: none
     &:active, &:focus, &:hover
@@ -91,7 +94,7 @@
     align-items: center
     span
       color: #fff
-      font-size: 15px
+      font-size: 16px
       font-weight: 400
       text-decoration: none
       transition: font-weight $anim
@@ -102,13 +105,15 @@
   &__nav-title
     font-size: 16px
     font-weight: 800
-    text-transform: uppercase
     color: #fff
     padding-bottom: 30px
   &__list
     display: grid
     gap: 20px
+    grid-template-columns: repeat(2,1fr)
     justify-items: start
+    &.contact
+      grid-template-columns: 1fr
 
 .footer-btm
   padding: 15px 0

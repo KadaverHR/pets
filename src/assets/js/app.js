@@ -159,49 +159,49 @@ $(document).ready(function () {
 
 
   // меню
-  // try {
-  //   let catalogButton = document.querySelector("#hamburger-menu");
-  //   let catalogDrop = document.querySelector("#catalog-drop");
-  //   let openMenu = false;
+  try {
+    let catalogButton = document.querySelector("#hamburger-menu");
+    let catalogDrop = document.querySelector("#catalog-drop");
+    let openMenu = false;
 
-  //   catalogButton.addEventListener("click", (e) => {
-  //     changeCatalogDrop(e);
-  //   });
+    catalogButton.addEventListener("mouseover", (e) => {
+      changeCatalogDrop(e);
+    });
 
-  //   const changeCatalogDrop = (e) => {
-  //     e.stopPropagation();
-  //     changeCatalogDropType(openMenu);
-  //   };
-  //   const changeCatalogDropType = (open_menu) => {
-  //     if (open_menu) {
-  //       catalogButton.classList.remove("catalog-button--active");
-  //       catalogDrop.classList.remove("d-block");
-  //       openMenu = false;
-  //     } else {
-  //       catalogButton.classList.add("catalog-button--active");
-  //       catalogDrop.classList.add("d-block");
-  //       openMenu = true;
-  //     }
-  //   };
-  //   let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
+    const changeCatalogDrop = (e) => {
+      e.stopPropagation();
+      changeCatalogDropType(openMenu);
+    };
+    const changeCatalogDropType = (open_menu) => {
+      if (open_menu) {
+        catalogButton.classList.remove("catalog-button--active");
+        catalogDrop.classList.remove("d-block");
+        openMenu = false;
+      } else {
+        catalogButton.classList.add("catalog-button--active");
+        catalogDrop.classList.add("d-block");
+        openMenu = true;
+      }
+    };
+    let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
 
-  //   const changeTireSelectionBlock = (e) => {
-  //     tireSelectionItems.forEach((item) => {
-  //       let tireSelectionItemHeader = item.querySelector(
-  //         ".tire-selection-item__header"
-  //       );
-  //       tireSelectionItemHeader.addEventListener("click", () => {
-  //         tireSelectionItemHeader.parentNode.classList.toggle(
-  //           "tire-selection-item--active"
-  //         );
-  //       });
-  //     });
-  //   };
+    const changeTireSelectionBlock = (e) => {
+      tireSelectionItems.forEach((item) => {
+        let tireSelectionItemHeader = item.querySelector(
+          ".tire-selection-item__header"
+        );
+        tireSelectionItemHeader.addEventListener("click", () => {
+          tireSelectionItemHeader.parentNode.classList.toggle(
+            "tire-selection-item--active"
+          );
+        });
+      });
+    };
 
-  //   changeTireSelectionBlock();
-  // } catch (error) {
+    changeTireSelectionBlock();
+  } catch (error) {
 
-  // }
+  }
 
 
   /////мобильное меню
@@ -221,28 +221,7 @@ $(document).ready(function () {
   //   });
   // }
   // Бургер
-  // let burger = document.querySelector('#hamburger-menu-mob');
-  // let menu = document.querySelector('#catalog-drop-mob');
-  // let menuLinks = menu.querySelectorAll('.catalog-link');
-  // let closeMenu = menu.querySelector('#close-mob')
-
-  // burger.addEventListener('click', function () {
-  //   menu.classList.toggle('active');
-  //   document.body.classList.toggle('stop-scroll');
-  // });
-
-  // closeMenu.addEventListener('click', function () {
-  //   menu.classList.toggle('active');
-  //   document.body.classList.toggle('stop-scroll');
-  // });
-
-  // menuLinks.forEach(function (el) {
-  //   el.addEventListener('click', function () {
-  //     menu.classList.remove('active');
-  //     document.body.classList.remove('stop-scroll')
-  //   })
-  // });
-
+  // 
 
 
 
@@ -527,15 +506,17 @@ $(document).ready(function () {
   });
 
 
-
-////поиск
-
-  let searchBtn = document.getElementById('search-header-btn')
-  let searchArea = document.getElementById('search-header')
-  console.log(searchBtn)
-  searchBtn.addEventListener('click', function() {
+  let searchBtn = document.getElementById('search-btn')
+  let searchArea = document.getElementById('search-area')
+  let buttonClose = document.getElementById('button-close')
+  searchBtn.addEventListener('click', function () {
     searchArea.classList.add('active')
   })
+
+  buttonClose.addEventListener('click', function() {
+    searchArea.classList.remove('active')
+  })
+
 
 
 

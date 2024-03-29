@@ -49,24 +49,86 @@
         </div>
 
         <nav class="header-btm__nav-list catalog">
-          <a href="" class="header-btm__nav-link">
-            Собаки
-          </a>
-          <a href="" class="header-btm__nav-link">
-            Кошки
-          </a>
-          <a href="" class="header-btm__nav-link">
-            Акции
-          </a>
-          <a href="" class="header-btm__nav-link">
-            Доставка и оплата
-          </a>
-          <a href="" class="header-btm__nav-link">
-            О нас
-          </a>
-          <a href="" class="header-btm__nav-link">
-            Контакты
-          </a>
+          <div class="header-btm__nav-item">
+            <a class="header-btm__nav-link" id="hamburger-menu">
+              Собаки
+            </a>
+            <div class="catalog-drop" id="catalog-drop" data-drop>
+              <nav class="catalog-drop__container ">
+                <ul class="catalog-navigation">
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c1.svg" alt="">
+                      <p>Корма</p>
+                    </a>
+                  </li>
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c2.svg" alt="">
+                      <p>Лотки</p>
+                    </a>
+                  </li>
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c3.svg" alt="">
+                      <p>Переноски</p>
+                    </a>
+                  </li>
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c4.svg" alt="">
+                      <p>Лежаки и домики</p>
+                    </a>
+                  </li>
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c5.svg" alt="">
+                      <p>Игрушки</p>
+                    </a>
+                  </li>
+                  <li class="catalog-navigation__item">
+                    <a class="catalog-navigation__link" href="">
+                      <img src="../../assets/img/c6.svg" alt="">
+                      <p>Кормушки</p>
+                    </a>
+                  </li>
+                </ul>
+
+              </nav>
+
+
+            </div>
+
+          </div>
+
+
+
+
+          <div class="header-btm__nav-item">
+            <a href="" class="header-btm__nav-link">
+              Кошки
+            </a>
+          </div>
+          <div class="header-btm__nav-item">
+            <a href="" class="header-btm__nav-link">
+              Акции
+            </a>
+          </div>
+          <div class="header-btm__nav-item">
+            <a href="" class="header-btm__nav-link">
+              Доставка и оплата
+            </a>
+          </div>
+          <div class="header-btm__nav-item">
+            <a href="" class="header-btm__nav-link">
+              О нас
+            </a>
+          </div>
+          <div class="header-btm__nav-item">
+            <a href="" class="header-btm__nav-link">
+              Контакты
+            </a>
+          </div>
         </nav>
 
         <!-- 
@@ -114,18 +176,18 @@
         <!-- </div> -->
 
         <div class="header-btm__search">
-          <button id="search-header-btn" class="button sheader-btm__search-img">
+          <button class="button sheader-btm__search-img" id="search-btn">
             <img src="../../assets/img/search.svg" alt="Найти" />
           </button>
-          <div id="search-header" class="search-area">
+          <div id="search-area" class="search-area">
             <form class="search">
               <input type="text" class="search__input" value="" placeholder="Поиск" />
-              <div class="search__btns">
-                <button class="button search__button" type="submit">
+              <div class="search-area__btn-box">
+                <button class="button" type="submit">
                   <img src="../../assets/img/search.svg" alt="Найти" />
                 </button>
-                <button>
-                  <img src="../../assets/img/ext.svg" alt="Найти" />
+                <button class="button" id="button-close">
+                  <img src="../../assets/img/search-close.svg" alt="Закрыть" />
                 </button>
               </div>
             </form>
@@ -142,7 +204,7 @@
         </div> -->
 
 
-        <div class="header-btm__cart">
+        <button class="header-btm__cart">
           <div class="header-btm__cart-box">
             <div class="header-btm__cart-img-box">
               <img class="header-btm__cart-image" src="../../assets/img/cart.svg" alt="Корзина" width="17"
@@ -153,7 +215,7 @@
               <p>12 345 <span>₽</span></p>
             </div>
           </div>
-        </div>
+        </button>
       </div>
     </div>
 
