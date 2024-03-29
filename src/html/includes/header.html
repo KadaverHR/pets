@@ -114,27 +114,32 @@
         <!-- </div> -->
 
         <div class="header-btm__search">
-          <button class="button sheader-btm__search-img">
+          <button id="search-header-btn" class="button sheader-btm__search-img">
             <img src="../../assets/img/search.svg" alt="Найти" />
           </button>
-          <div id="search" style="display: none;" class="search-area">
+          <div id="search-header" class="search-area">
             <form class="search">
               <input type="text" class="search__input" value="" placeholder="Поиск" />
-              <button class="button search__button" type="submit">
-                <img src="../../assets/img/search.svg" alt="Найти" />
-              </button>
+              <div class="search__btns">
+                <button class="button search__button" type="submit">
+                  <img src="../../assets/img/search.svg" alt="Найти" />
+                </button>
+                <button>
+                  <img src="../../assets/img/ext.svg" alt="Найти" />
+                </button>
+              </div>
             </form>
           </div>
         </div>
 
-        <div class="header-btm__lk">
+        <!-- <div class="header-btm__lk">
           <a class="header-btm__lk-link" href="">
             <img src="../../assets/img/lk.svg" alt="Вход">
             <p class="header-btm__lk-text">
               Вход
             </p>
           </a>
-        </div>
+        </div> -->
 
 
         <div class="header-btm__cart">

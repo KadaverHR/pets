@@ -525,4 +525,18 @@ $(document).ready(function () {
       "catalog-select__options--active"
     );
   });
+
+
+
+////поиск
+
+  let searchBtn = document.getElementById('search-header-btn')
+  let searchArea = document.getElementById('search-header')
+  console.log(searchBtn)
+  searchBtn.addEventListener('click', function() {
+    searchArea.classList.add('active')
+  })
+
+
+
 })
