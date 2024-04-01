@@ -125,440 +125,398 @@ $(document).ready(function () {
 
 
 
-  ymaps.ready(init);
+  // ymaps.ready(init);
 
-  function init() {
-    // в этой версии координаты просто элементы массива (и они поменяны местами)
-    if (document.getElementById('map') === null) return
-    let destinations = {
-      'MSK': [55.755864, 37.617698], //орел
-    },
+  // function init() {
+  //   // в этой версии координаты просто элементы массива (и они поменяны местами)
+  //   if (document.getElementById('map') === null) return
+  //   let destinations = {
+  //     'MSK': [55.755864, 37.617698], //орел
+  //   },
 
-      // Создание экземпляра карты и его привязка к контейнеру с
-      // заданным id ("map").
-      myMap = new ymaps.Map('map', {
-        // При инициализации карты обязательно нужно указать
-        // её центр и коэффициент масштабирования.
-        center: destinations['MSK'],
-        zoom: 13.5
-      });
+  //     // Создание экземпляра карты и его привязка к контейнеру с
+  //     // заданным id ("map").
+  //     myMap = new ymaps.Map('map', {
+  //       // При инициализации карты обязательно нужно указать
+  //       // её центр и коэффициент масштабирования.
+  //       center: destinations['MSK'],
+  //       zoom: 13.5
+  //     });
 
-    // Добавление метки
-    // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
-    let myPlacemark = new ymaps.Placemark([55.847861, 37.650055], {}, {
-      //опции
-      iconLayout: 'default#image',
-      iconImageHref: '../assets/img/map-icon.png',
-      iconImageSize: [44, 61],
-      iconImageOffset: [-27, -54],
-    });
+  //   // Добавление метки
+  //   // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
+  //   let myPlacemark = new ymaps.Placemark([55.847861, 37.650055], {}, {
+  //     //опции
+  //     iconLayout: 'default#image',
+  //     iconImageHref: '../assets/img/map-icon.png',
+  //     iconImageSize: [44, 61],
+  //     iconImageOffset: [-27, -54],
+  //   });
 
-    // После того как метка была создана, добавляем её на карту.
-    myMap.geoObjects.add(myPlacemark);
-  }
+  //   // После того как метка была создана, добавляем её на карту.
+  //   myMap.geoObjects.add(myPlacemark);
+  // }
 
 
   // меню
-  try {
-    let catalogButton = document.querySelector("#hamburger-menu");
-    let catalogDrop = document.querySelector("#catalog-drop");
-    let openMenu = false;
-
-    catalogButton.addEventListener("mouseover", () => {
-
-      catalogDrop.classList.add("d-block");
-      openMenu = true;
 
 
+  let catalogMenu = document.querySelectorAll('.catalog-item')
 
+  catalogMenu.forEach(element => {
 
-      // changeCatalogDrop(e);
-    });
+    element.addEventListener('mouseover', () => {
+      catalogData = element.querySelector('.catalog-drop')
+      catalogData.classList.add('d-block')
 
-    // if (openMenu = true) {
-    //   catalogDrop.classList.add("d-block");
-    // }
-
-
-
-    // const changeCatalogDrop = (e) => {
-    //   e.stopPropagation();
-    //   changeCatalogDropType(openMenu);
-    // };
-    // const changeCatalogDropType = (open_menu) => {
-    // if (open_menu) {
-    //   catalogButton.classList.remove("catalog-button--active");
-    //   catalogDrop.classList.remove("d-block");
-    //   openMenu = false;
-    // } else {
-    // catalogButton.classList.add("catalog-button--active");
-    // catalogDrop.classList.add("d-block");
-    // openMenu = true;
-    // }
-    // };
-
-    // catalogDrop.addEventListener("mouseout", () => {
-    //   catalogDrop.classList.remove("d-block");
-    // });
-
-    // let tireSelectionItems = document.querySelectorAll(".tire-selection-item");
-
-    // const changeTireSelectionBlock = (e) => {
-    //   tireSelectionItems.forEach((item) => {
-    //     let tireSelectionItemHeader = item.querySelector(
-    //       ".tire-selection-item__header"
-    //     );
-    //     tireSelectionItemHeader.addEventListener("click", () => {
-    //       tireSelectionItemHeader.parentNode.classList.toggle(
-    //         "tire-selection-item--active"
-    //       );
-    //     });
-    //   });
-    // };
-
-    // changeTireSelectionBlock();
-  } catch (error) {
-
-  }
-
-
-  /////мобильное меню
-
-  // var acc = document.getElementsByClassName("accordion");
-  // var i;
-
-  // for (i = 0; i < acc.length; i++) {
-  //   acc[i].addEventListener("click", function () {
-  //     this.classList.toggle("active");
-  //     var panel = this.nextElementSibling;
-  //     if (panel.style.maxHeight) {
-  //       panel.style.maxHeight = null;
-  //     } else {
-  //       panel.style.maxHeight = panel.scrollHeight + "px";
-  //     }
-  //   });
-  // }
-  // Бургер
-  // 
-
-
-
-  //слайдер баннер 
-
-  new Swiper(".swiper-banner", {
-    loop: true,
-    allowSlideNext: true,
-    autoplay: {
-      delay: 3000,
-    },
-    // navigation: {
-    //   nextEl: ".swiper-button-next",
-    //   prevEl: ".swiper-button-prev",
-    // },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      567: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      767: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetweenSlides: 30,
-      },
-      1023: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 50
-      },
-      1139: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 60
-      },
-    },
-  });
-
-  new Swiper(".swiper-discounts", {
-    loop: false,
-    // navigation: {
-    //   nextEl: ".swiper-discounts__swiper-button-next",
-    //   prevEl: ".swiper-discounts__swiper-button-prev",
-    // },
-    autoHeight: true,
-    pagination: {
-      el: ".swiper-discounts__swiper-pagination ",
-      clickable: true,
-    },
-    spaceBetween: 20,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      567: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      767: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      1023: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-      1139: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-    },
-  });
-
-  new Swiper(".swiper-seller", {
-    loop: false,
-    // navigation: {
-    //   nextEl: ".swiper-discounts__swiper-button-next",
-    //   prevEl: ".swiper-discounts__swiper-button-prev",
-    // },
-    autoHeight: true,
-    pagination: {
-      el: ".swiper-seller__swiper-pagination ",
-      clickable: true,
-    },
-    spaceBetween: 20,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      567: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      767: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      1023: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-      1139: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-    },
-  });
-
-
-
-  new Swiper(".swiper-catalog-banner", {
-    loop: true,
-    allowSlideNext: true,
-    autoplay: {
-      delay: 3000,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      567: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 10
-      },
-      767: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetweenSlides: 30,
-      },
-      1023: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        // spaceBetweenSlides: 50
-      },
-      1139: {
-        slidesPerView: 1,
-        // slidesPerGroup: 1,
-        spaceBetweenSlides: 30
-      },
-    },
-  });
-
-  new Swiper(".swiper-company", {
-    loop: true,
-    allowSlideNext: true,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 3000,
-    },
-    pagination: {
-      el: ".swiper-company__swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetweenSlides: 10
-      },
-      567: {
-        slidesPerView: 2,
-
-        spaceBetweenSlides: 10
-      },
-      767: {
-        slidesPerView: 2,
-        spaceBetweenSlides: 30,
-      },
-      1023: {
-        slidesPerView: 2,
-        spaceBetweenSlides: 30
-        // spaceBetweenSlides: 50
-      },
-      1139: {
-        slidesPerView: 2,
-        // slidesPerGroup: 1,
-        spaceBetweenSlides: 30
-      },
-    },
-  });
-
-
-
-
-  ///корзина
-
-  let cardsBtns = document.querySelectorAll('.card__btn')
-
-  cardsBtns.forEach(element => {
-    element.addEventListener('click', function () {
-      console.log(element)
-      element.classList.add('active')
-      element.innerHTML = '<span class="card__btn-order">В корзинe</span>'
-      console.log(element)
-
-    });
-
-
-  })
-
-
-
-
-
-  ///////
-  $(".range-price").slider({
-    animate: "slow",
-    range: true,
-    values: [10, 1000],
-    slide: function (event, ui) {
-      $(".result-range-price > .from > input").val(ui.values[0]);
-      $(".result-range-price > .to > input").val(ui.values[1]);
-    },
-  });
-  $(".result-range-price > .from > input").val(
-    $(".range-price").slider("values", 0)
-  );
-  $(".result-range-price > .to  > input").val(
-    $(".range-price").slider("values", 1)
-  );
-
-
-
-
-  // Фильтр мобильная версия
-
-  let filter = $(".filter-mobile");
-  let filterNextStep = $(".filter-mobile-step-next");
-
-  $(".js-button-filter-mobile").click(function () {
-    filter.addClass("filter-mobile--active");
-    $("html").css("overflow-y", "hidden");
-  });
-
-  $(".js-filter-mobile-block__button-all").click(function () {
-    filterNextStep.toggleClass("filter-mobile-step-next--active");
-  });
-
-  $(".js-filter-mobile-header-back").click(function () {
-    filterNextStep.removeClass("filter-mobile-step-next--active");
-  });
-
-  $(".js-filter-mobile-close").click(function () {
-    filter.removeClass("filter-mobile--active");
-    filterNextStep.removeClass("filter-mobile-step-next--active");
-    $("html").css("overflow-y", "auto");
-  });
-
-  $(".js-catalog-select").click(function () {
-    $(".catalog-select__options").toggleClass(
-      "catalog-select__options--active"
-    );
-  });
-
-
-  let searchBtn = document.getElementById('search-btn')
-  let searchArea = document.getElementById('search-area')
-  let buttonClose = document.getElementById('button-close')
-  searchBtn.addEventListener('click', function () {
-    searchArea.classList.add('active')
-  })
-
-  buttonClose.addEventListener('click', function () {
-    searchArea.classList.remove('active')
-  })
-
-
-
-
-  let links = document.querySelectorAll('a')
-  let modal = document.getElementById('modal')
-  let modalClose = document.getElementById('modal-close')
-  let modalBody = document.getElementById('modal-body')
-
-  links.forEach(element => {
-    element.addEventListener('click', () => {
-      element.removeAttribute('href')
-      modal.classList.remove('d-n')
+      catalogData.addEventListener('mouseout', () => {
+        catalogData.classList.remove('d-block')
+      })
     })
+    element.addEventListener('mouseout', () => {
+      catalogData.classList.remove('d-block')
+    })
+  // })
+
+});
+
+/////мобильное меню
+
+// var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// }
+// Бургер
+// 
+
+
+
+//слайдер баннер 
+
+new Swiper(".swiper-banner", {
+  loop: true,
+  allowSlideNext: true,
+  autoplay: {
+    delay: 3000,
+  },
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    567: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    767: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetweenSlides: 30,
+    },
+    1023: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 50
+    },
+    1139: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 60
+    },
+  },
+});
+
+new Swiper(".swiper-discounts", {
+  loop: false,
+  // navigation: {
+  //   nextEl: ".swiper-discounts__swiper-button-next",
+  //   prevEl: ".swiper-discounts__swiper-button-prev",
+  // },
+  autoHeight: true,
+  pagination: {
+    el: ".swiper-discounts__swiper-pagination ",
+    clickable: true,
+  },
+  spaceBetween: 20,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    567: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1023: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1139: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+});
+
+new Swiper(".swiper-seller", {
+  loop: false,
+  // navigation: {
+  //   nextEl: ".swiper-discounts__swiper-button-next",
+  //   prevEl: ".swiper-discounts__swiper-button-prev",
+  // },
+  autoHeight: true,
+  pagination: {
+    el: ".swiper-seller__swiper-pagination ",
+    clickable: true,
+  },
+  spaceBetween: 20,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    567: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1023: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    1139: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+});
+
+
+
+new Swiper(".swiper-catalog-banner", {
+  loop: true,
+  allowSlideNext: true,
+  autoplay: {
+    delay: 3000,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    567: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 10
+    },
+    767: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetweenSlides: 30,
+    },
+    1023: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      // spaceBetweenSlides: 50
+    },
+    1139: {
+      slidesPerView: 1,
+      // slidesPerGroup: 1,
+      spaceBetweenSlides: 30
+    },
+  },
+});
+
+new Swiper(".swiper-company", {
+  loop: true,
+  allowSlideNext: true,
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: ".swiper-company__swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetweenSlides: 10
+    },
+    567: {
+      slidesPerView: 2,
+
+      spaceBetweenSlides: 10
+    },
+    767: {
+      slidesPerView: 2,
+      spaceBetweenSlides: 30,
+    },
+    1023: {
+      slidesPerView: 2,
+      spaceBetweenSlides: 30
+      // spaceBetweenSlides: 50
+    },
+    1139: {
+      slidesPerView: 2,
+      // slidesPerGroup: 1,
+      spaceBetweenSlides: 30
+    },
+  },
+});
+
+
+
+
+///корзина
+
+let cardsBtns = document.querySelectorAll('.card__btn')
+
+cardsBtns.forEach(element => {
+  element.addEventListener('click', function () {
+    console.log(element)
+    element.classList.add('active')
+    element.innerHTML = '<span class="card__btn-order">В корзинe</span>'
+    console.log(element)
+
   });
 
-  modalClose.addEventListener('click', () => {
-    modal.classList.add('d-n')
-  })
 
-  $(document).mouseup(function (e) {
-    var container = $(modalBody);
-    if (container.has(e.target).length === 0) {
-      modal.classList.add('d-n')
-    }
-  });
+})
+
+
+
+
+
+///////
+$(".range-price").slider({
+  animate: "slow",
+  range: true,
+  values: [10, 1000],
+  slide: function (event, ui) {
+    $(".result-range-price > .from > input").val(ui.values[0]);
+    $(".result-range-price > .to > input").val(ui.values[1]);
+  },
+});
+$(".result-range-price > .from > input").val(
+  $(".range-price").slider("values", 0)
+);
+$(".result-range-price > .to  > input").val(
+  $(".range-price").slider("values", 1)
+);
+
+
+
+
+// Фильтр мобильная версия
+
+let filter = $(".filter-mobile");
+let filterNextStep = $(".filter-mobile-step-next");
+
+$(".js-button-filter-mobile").click(function () {
+  filter.addClass("filter-mobile--active");
+  $("html").css("overflow-y", "hidden");
+});
+
+$(".js-filter-mobile-block__button-all").click(function () {
+  filterNextStep.toggleClass("filter-mobile-step-next--active");
+});
+
+$(".js-filter-mobile-header-back").click(function () {
+  filterNextStep.removeClass("filter-mobile-step-next--active");
+});
+
+$(".js-filter-mobile-close").click(function () {
+  filter.removeClass("filter-mobile--active");
+  filterNextStep.removeClass("filter-mobile-step-next--active");
+  $("html").css("overflow-y", "auto");
+});
+
+$(".js-catalog-select").click(function () {
+  $(".catalog-select__options").toggleClass(
+    "catalog-select__options--active"
+  );
+});
+
+
+let searchBtn = document.getElementById('search-btn')
+let searchArea = document.getElementById('search-area')
+let buttonClose = document.getElementById('button-close')
+searchBtn.addEventListener('click', function () {
+  searchArea.classList.add('active')
+})
+
+buttonClose.addEventListener('click', function () {
+  searchArea.classList.remove('active')
+})
+
+
+
+
+  // let links = document.querySelectorAll('a')
+  // let modal = document.getElementById('modal')
+  // let modalClose = document.getElementById('modal-close')
+  // let modalBody = document.getElementById('modal-body')
+
+  // links.forEach(element => {
+  //   element.addEventListener('click', () => {
+  //     element.removeAttribute('href')
+  //     modal.classList.remove('d-n')
+  //   })
+  // });
+
+  // modalClose.addEventListener('click', () => {
+  //   modal.classList.add('d-n')
+  // })
+
+  // $(document).mouseup(function (e) {
+  //   var container = $(modalBody);
+  //   if (container.has(e.target).length === 0) {
+  //     modal.classList.add('d-n')
+  //   }
+  // });
 
 })
