@@ -7,54 +7,54 @@ $(document).ready(function () {
 
   //высота элементов
 
-  try {
-    let header = document.querySelector('.header')
-    let footer = document.querySelector('.footer-top')
-    let breadcrumb = document.querySelector('.breadcrumb-section')
-    let errorImg = document.getElementById('errorImg')
-    let wholeHeight = document.querySelector('.whole-height')
-    let cont = wholeHeight.querySelector('.container')
-    let screenHeight = document.documentElement.clientHeight
+  // try {
+  //   let header = document.querySelector('.header')
+  //   let footer = document.querySelector('.footer')
+  //   let breadcrumb = document.querySelector('.breadcrumb-section')
+  //   let errorImg = document.getElementById('errorImg')
+  //   let wholeHeight = document.querySelector('.whole-height')
+  //   let cont = wholeHeight.querySelector('.container')
+  //   let screenHeight = document.documentElement.clientHeight
 
-    let headerHeight = header.getBoundingClientRect().height
-    let footerHeight = footer.getBoundingClientRect().height
-
-
-
-    if (breadcrumb !== null) {
-      let breadcrumbHeight = breadcrumb.getBoundingClientRect().height
-      let contHeight = screenHeight - (headerHeight + footerHeight + breadcrumbHeight)
-      if (contHeight < 469) {
-        contHeight = screenHeight - headerHeight
-      }
-
-      wholeHeight.style.minHeight = contHeight + 'px'
-      cont.style.minHeight = contHeight + 'px'
-
-      if (errorImg !== null) {
-        errorImg.style.minHeight = contHeight + 'px'
-      }
-      console.log('сработало с крошками')
-    }
-
-    else {
-      let contHeight = screenHeight - (headerHeight + footerHeight)
-      if (contHeight < 469) {
-        contHeight = screenHeight - headerHeight
-      }
-
-      wholeHeight.style.minHeight = contHeight + 'px'
-      cont.style.minHeight = contHeight + 'px'
-
-      if (errorImg !== null) {
-        errorImg.style.minHeight = contHeight + 'px'
-      }
-      console.log('сработало без крошек')
-    }
+  //   let headerHeight = header.getBoundingClientRect().height
+  //   let footerHeight = footer.getBoundingClientRect().height
 
 
-  } catch (err) {
-  }
+
+  //   if (breadcrumb !== null) {
+  //     let breadcrumbHeight = breadcrumb.getBoundingClientRect().height
+  //     let contHeight = screenHeight - (headerHeight + footerHeight + breadcrumbHeight)
+  //     if (contHeight < 469) {
+  //       contHeight = screenHeight - headerHeight
+  //     }
+
+  //     wholeHeight.style.minHeight = contHeight + 'px'
+  //     cont.style.minHeight = contHeight + 'px'
+
+  //     if (errorImg !== null) {
+  //       errorImg.style.minHeight = contHeight + 'px'
+  //     }
+  //     console.log('сработало с крошками')
+  //   }
+
+  //   else {
+  //     let contHeight = screenHeight - (headerHeight + footerHeight)
+  //     if (contHeight < 469) {
+  //       contHeight = screenHeight - headerHeight
+  //     }
+
+  //     wholeHeight.style.minHeight = contHeight + 'px'
+  //     cont.style.minHeight = contHeight + 'px'
+
+  //     if (errorImg !== null) {
+  //       errorImg.style.minHeight = contHeight + 'px'
+  //     }
+  //     console.log('сработало без крошек')
+  //   }
+
+
+  // } catch (err) {
+  // }
 
   ////Горизонтальные карточки. Удаление стиля на мобилке
   try {

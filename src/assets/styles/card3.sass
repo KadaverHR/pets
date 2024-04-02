@@ -1,10 +1,8 @@
 .products-page__body-list.horizontal
   grid-template-columns: 1fr
   gap: 0
-  .products-page__body-item
-    border-top: 1px solid #AAB2C2
-    &::last-child
-      border-bottom: 1px solid #AAB2C2
+  padding: 0
+  margin-bottom: 20px
   .card
     grid-template-areas: "img title btn" "img art btn" "img avail btn" "img delivery btn"
     gap: 10px 30px
@@ -13,6 +11,12 @@
     align-items: center
     align-content: center
     grid-template-columns: 130px 2fr auto
+    border-right: 0
+    border-left: 0
+    border-top: 0
+    border-bottom: 1px solid #A3A3A3
+    &:last-of-type
+      border-bottom: 0
   .card__img-wrapper
     grid-area: img
     img
