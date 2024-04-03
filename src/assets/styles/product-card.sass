@@ -7,13 +7,15 @@
     @media all and ($table)
       border-bottom: none
     .title
-      font-size: 36px
+      text-align: start
+      grid-column: auto
+      // font-size: 36px
       @media all and ($mobile)
         font-size: 24px
   &__box
     padding: 30px 0
     display: grid
-    grid-template-columns: repeat(3, 1fr )
+    grid-template-columns: 50px repeat(3, 1fr )
     gap: 30px
     align-items: start
     @media all and ($middle)
@@ -24,8 +26,8 @@
       border-radius: 5px
       padding: 20px 10px
   &__img-wrapper
-    padding: 30px
-    border: 1px solid #AAB2C2
+    // padding: 30px
+    // border: 1px solid #AAB2C2
     border-radius: 5px
     @media all and ($table)
       border: none
@@ -36,6 +38,8 @@
     display: grid
     gap: 15px
     justify-items: start
+    padding-bottom: 15px
+    border-bottom: 1px dashed #6D6F7C
     @media all and ($table)
       justify-items: stretch
   &__desc-item
@@ -69,12 +73,12 @@
         padding-left: 10px !important
   &__desc-title
     color: #666
-    font-size: 16px
+    font-size: 15px
     font-weight: 400
   &__desc-parameter
-    color: #35363A
-    font-size: 14px
-    font-weight: 400
+    color: #2B2B2B
+    font-size: 15px
+    font-weight: 600
   &__desc-available
     padding-top: 25px
     justify-self: center
