@@ -17,7 +17,7 @@
     padding-top: 8px
     padding-bottom: 8px
     border-radius: 5px
-    background: #ECEDEF
+    background: #D4D6D8
     color: #212121
     font-size: 14px
     font-weight: 700
@@ -32,9 +32,9 @@
     gap: 10px
     align-items: center
     &:active .paginations__left-btn-text, &:hover .paginations__left-btn-text, &:focus .paginations__left-btn-text
-      color: #EA5F12
+      color: $orange
     &:active .paginations__left-img path, &:hover .paginations__left-img path, &:focus .paginations__left-img path
-      fill: #EA5F12
+      fill: $orange
   &__left-img path
     transition: fill $anim
   &__right
@@ -54,11 +54,11 @@
     font-weight: 400
     transition: color $anim
     &:active, &:hover, &:focus
-      color: #EA5F12
+      color: $orange
   &__right-btn.active
     border-radius: 3px
-    background: #ECEDEF
-    color: #EA5F12
+    background: #D4D6D8
+    color: $orange
     font-weight: 700
   &__right-btn.disabled
     cursor: auto

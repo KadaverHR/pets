@@ -9,73 +9,73 @@
 
 
 <section class="products-page">
-  <div class="container">
-    <div class="title-wrapper">
-      <h2 class="title">
-        Список товаров
-      </h2>
-    </div>
+
+  <div class="title-wrapper">
+    <h2 class="title">
+      Список товаров
+    </h2>
+  </div>
 
 
-    {% include "html/includes/sorting.html" %}
+  {% include "html/includes/sorting.html" %}
 
-    <div class="products-page__filter-btn-box">
-      <button class="button products-page__filter-btn js-button-filter-mobile">
-        <span class="products-page__filter-btn-title">Фильтры</span>
-        <div class="products-page__filter-icon-box">
-          <img class="svg" src="assets/img/filter-btn.svg">
-          <span class="products-page__filter-btn-count">3</span>
-        </div>
-      </button>
-      {% include "html/includes/filter-mobile.html" %}
-    </div>
-    <div class="products-page__box">
-      <div class="products-page__filters filters">
-        {% include "html/includes/filter.html" %}
+  <div class="products-page__filter-btn-box">
+    <button class="button products-page__filter-btn js-button-filter-mobile">
+      <span class="products-page__filter-btn-title">Фильтры</span>
+      <div class="products-page__filter-icon-box">
+        <img class="svg" src="assets/img/filter-btn.svg">
+        <span class="products-page__filter-btn-count">3</span>
       </div>
+    </button>
+    {% include "html/includes/filter-mobile.html" %}
+  </div>
+  <div class="products-page__box">
+    <div class="products-page__filters filters">
+      {% include "html/includes/filter.html" %}
+    </div>
 
-      <div class="products-page__body">
+    <div class="products-page__body">
 
 
-        <div class="products-page__bubbles">
-          <div class="bubble">
-            <span>
-              Переноски
-            </span>
-            <button class="button bubble__btn">
-              <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
-            </button>
-          </div>
-          <div class="bubble">
-            <span>
-              Игрушки
-            </span>
-            <button class="button bubble__btn">
-              <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
-            </button>
-          </div>
-          <div class="bubble">
-            <span>
-              Лежанки
-            </span>
-            <button class="button bubble__btn">
-              <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
-            </button>
-          </div>
+      <div class="products-page__bubbles">
+        <div class="bubble">
+          <span>
+            Переноски
+          </span>
+          <button class="button bubble__btn">
+            <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
+          </button>
         </div>
-        <div class="sorting">
-          <div class="sorting__container sorting__container--sort">
-            <p class="sorting__title">
-              Сортировать по:
-            </p>
-            <button class="button sorting__btn active">
-              Цене по возрастанию
-            </button>
-            <button class="button sorting__btn">
-              Цене по убыванию
-            </button>
-          </div>
-          <!-- <div class="sorting__container sorting__container--showing">
+        <div class="bubble">
+          <span>
+            Игрушки
+          </span>
+          <button class="button bubble__btn">
+            <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
+          </button>
+        </div>
+        <div class="bubble">
+          <span>
+            Лежанки
+          </span>
+          <button class="button bubble__btn">
+            <img class="svg bubble__btn-img" src="assets/img/bubble-btn.svg">
+          </button>
+        </div>
+      </div>
+      <div class="sorting">
+        <div class="sorting__container sorting__container--sort">
+          <p class="sorting__title">
+            Сортировать по:
+          </p>
+          <button class="button sorting__btn active">
+            Цене по возрастанию
+          </button>
+          <button class="button sorting__btn">
+            Цене по убыванию
+          </button>
+        </div>
+        <!-- <div class="sorting__container sorting__container--showing">
             <p class="sorting__title">
               Показывать по:
             </p>
@@ -104,56 +104,56 @@
 
           </div> -->
 
-          <div class="sorting__container sorting__container--view">
-            <button id="verticalCard" class="button sorting__btn sorting__btn--card active">
-              <img class="svg sorting__btn-img" src="../../assets/img/card1.svg">
-            </button>
-            <button id="horizontalCard" class="button sorting__btn sorting__btn--card">
-              <img class="svg sorting__btn-img" src="../../assets/img/card2.svg">
-            </button>
-          </div>
+        <div class="sorting__container sorting__container--view">
+          <button id="verticalCard" class="button sorting__btn sorting__btn--card active">
+            <img class="svg sorting__btn-img" src="../../assets/img/card1.svg">
+          </button>
+          <button id="horizontalCard" class="button sorting__btn sorting__btn--card">
+            <img class="svg sorting__btn-img" src="../../assets/img/card2.svg">
+          </button>
         </div>
-        <ul class="products-page__body-list">
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card2.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card2.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card2.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card2.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card2.html" %}
-          </li>
-          <li class="products-page__body-item">
-            {% include "html/includes/card.html" %}
-          </li>
-        </ul>
-        {% include "html/includes/paginations.html" %}
       </div>
-
-
-
+      <ul class="products-page__body-list">
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card2.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card2.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card2.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card2.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card2.html" %}
+        </li>
+        <li class="products-page__body-item">
+          {% include "html/includes/card.html" %}
+        </li>
+      </ul>
+      {% include "html/includes/paginations.html" %}
     </div>
+
+
+
+  </div>
 
 </section>
 
