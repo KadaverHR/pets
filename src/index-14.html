@@ -1,0 +1,37 @@
+{% set title = "Акция" %}
+{% set bodyClass = "is-main" %}
+
+{% extends "html/layouts/default.html" %}
+
+{% block content %}
+{% include "html/includes/breadcrumbs.html" %}
+<section class="results stock">
+
+  <div class="title-wrapper">
+    <h2 class="title">
+      Акции
+    </h2>
+  </div>
+
+  <div class="stock__banner-box">
+    <img src="assets/img/stock-banner.jpg" alt="" class="stock__banner">
+  </div>
+
+
+  <div class="stock__banner-text-box">
+    <p class="stock__banner-title">
+      Корм для питомца "Эструдо": идеальный выбор для здоровья и счастья вашего любимца!
+    </p>
+    <p class="stock__banner-text">
+      Когда дело доходит до заботы о наших домашних питомцах, вопрос выбора корма становится не только важным, но и
+      ответственным. Ведь правильное питание - залог здоровья и долгой, радостной жизни нашего маленького друга. И если
+      вы стремитесь предоставить только лучшее своему питомцу, то корм "Эструдо" - именно то, что вам нужно. "Эструдо" -
+      это высококачественный корм для домашних животных, разработанный экспертами с многолетним опытом, исходя из
+      особенностей каждого вида и породы.
+    </p>
+  </div>
+</section>
+
+
+
+{% endblock %}

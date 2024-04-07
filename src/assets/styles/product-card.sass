@@ -15,9 +15,9 @@
   &__box
     padding: 30px 0
     display: grid
-    grid-template-columns: 50px repeat(3, 1fr )
+    grid-template-columns: 460px  repeat(2, 1fr )
     gap: 30px
-    align-items: start
+    align-items: stretch
     @media all and ($middle)
       grid-template-columns: 350px 1fr 1fr
     @media all and ($table)
@@ -25,9 +25,15 @@
       border: 1px solid #AAB2C2
       border-radius: 5px
       padding: 20px 10px
+  &__imgs-box
+    display: grid
+    grid-template-columns: 50px 1fr
+    gap: 10px
   &__img-wrapper
     // padding: 30px
     // border: 1px solid #AAB2C2
+    display: grid
+    align-items: center
     border-radius: 5px
     @media all and ($table)
       border: none
@@ -80,22 +86,25 @@
     font-size: 15px
     font-weight: 600
   &__desc-available
-    padding-top: 25px
-    justify-self: center
-    @media all and ($table)
-      padding-top: 15px
+    padding-top: 15px
   &__desc-available-text
     color: #2F5379
     font-size: 16px
     font-weight: 400
+  &__packing
+    display: grid
+    gap: 10px
+    justify-items: start
+  &__desc-center
+    display: grid
+    gap: 10px
+    justify-items: start
   &__order
     display: grid
     border-radius: 5px
-    background: #FFF
-    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12)
-    padding: 20px 30px
-    @media all and ($table)
-      padding: 20px
+    border: 1px solid #A3A3A3
+    padding: 20px
+
     @media all and ($mobile)
       padding: 0
       box-shadow: none

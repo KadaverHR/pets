@@ -1,11 +1,19 @@
 .company-page
   padding-top: 20px
   padding-bottom: 60px
+  .title-wrapper
+    grid-template-columns: 1fr
+  .title
+    grid-column: auto
   &__text
     color: #000
     font-size: 16px
     font-weight: 400
     padding-bottom: 30px
+    &--strong
+      color: $orange
+      font-size: 22px
+      font-weight: 500
   .swiper-company
     margin-left: 10px
     margin-right: 10px

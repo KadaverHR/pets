@@ -17,85 +17,115 @@
 
 
   <div class="product-card__box">
-    {% include "html/includes/vertical-cards.html" %}
-    <div class="product-card__img-wrapper">
-      <img src="assets/img/product.jpg" alt="Фото продукта">
+    <div class="product-card__imgs-box">
+      {% include "html/includes/vertical-cards.html" %}
+      <div class="product-card__img-wrapper">
+        <img src="assets/img/product.jpg" alt="Фото продукта">
+      </div>
     </div>
-
-    <ul class="product-card__desc-list">
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Артикул:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          16004753
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Направленность:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Корма повседневные
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Тип корма:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Корм
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Бренд:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Grandin
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Возраст:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Для малышей
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Состав корма:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Ягненок
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Спецпоказания:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Универсальный
-        </p>
-      </li>
-      <li class="product-card__desc-item">
-        <p class="product-card__desc-bg product-card__desc-title">
-          Страна производства:
-        </p>
-        <p class="product-card__desc-bg product-card__desc-parameter">
-          Испания
-        </p>
-      </li>
-      
-    </ul>
-
-    <!-- <div class="product-card__desc-available">
-          <p class="product-card__desc-available-text">
-            В наличии <span>2</span> шт.
+    <div class="product-card__desc-center">
+      <ul class="product-card__desc-list">
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Артикул:
           </p>
-        </div> -->
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            16004753
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Направленность:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Корма повседневные
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Тип корма:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Корм
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Бренд:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Grandin
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Возраст:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Для малышей
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Состав корма:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Ягненок
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Спецпоказания:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Универсальный
+          </p>
+        </li>
+        <li class="product-card__desc-item">
+          <p class="product-card__desc-bg product-card__desc-title">
+            Страна производства:
+          </p>
+          <p class="product-card__desc-bg product-card__desc-parameter">
+            Испания
+          </p>
+        </li>
 
+
+
+
+
+
+
+      </ul>
+
+      <div class="product-card__packing">
+        <p class="product-card__desc-bg product-card__desc-parameter">
+          Фасовка
+        </p>
+
+        <div class="card__variants-box">
+          <a href="" class="card__variants-link">
+            11.2 кг
+          </a>
+          <a href="" class="card__variants-link">
+            500 гр
+          </a>
+          <a href="" class="card__variants-link">
+            12 кг
+          </a>
+          <a href="" class="card__variants-link">
+            2 кг
+          </a>
+        </div>
+      </div>
+
+
+      <div class="product-card__desc-available">
+        <p class="product-card__desc-available-text">
+          В наличии <span>2</span> шт.
+        </p>
+      </div>
+    </div>
 
     <div class="product-card__order">
       <p class="product-card__order-title">
@@ -152,16 +182,10 @@
           <span>Заказ в 1 клик</span>
         </button>
       </div>
-
-      <div class="product-card__desc-available">
-        <p class="product-card__desc-available-text">
-          В наличии <span>2</span> шт.
-        </p>
-      </div>
     </div>
   </div>
 
-
+  {% include "html/includes/tabs.html" %}
 </section>
 
 {% include "html/includes/popular-swiper.html" %}

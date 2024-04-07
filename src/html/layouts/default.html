@@ -25,7 +25,8 @@
   <script defer src="assets/libs/air-datepicker.js"></script>
   <script defer src="assets/js/app.js"></script>
 
-  <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <!-- <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script> -->
+
 </head>
 
 <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %} id="body">
@@ -51,7 +52,9 @@
     integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous">
     </script>
 
-
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=71b2368b-427a-4d7a-8d3a-a27bbb3be2eb&lang=ru_RU"
+    type="text/javascript">
+    </script>
   <script>
 
     window.addEventListener('scroll', function () {
@@ -86,8 +89,8 @@
     })
 
   </script>
-
-  <!-- <script type="text/javascript">
+<!-- 
+  <script type="text/javascript">
     //Дождёмся загрузки API и готовности DOM.
     ymaps.ready(init);
 

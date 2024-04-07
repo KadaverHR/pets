@@ -1,0 +1,31 @@
+{% set title = "Корзина пустая" %}
+{% set bodyClass = "is-main" %}
+
+{% extends "html/layouts/default.html" %}
+
+{% block content %}
+{% include "html/includes/breadcrumbs.html" %}
+<section class="results noresults whole-height">
+
+  <div class="title-wrapper">
+    <h2 class="title">
+      Козина пустая
+    </h2>
+  </div>
+
+  <div class="noresults__box">
+    <p class="noresults__text">
+      В корзине нет ни одного товара. Вы можете подобрать интересующие вас товары в нашем каталоге товаров.
+    </p>
+
+    <a href="" class="button noresults__btn">
+      Продолжить покупки
+    </a>
+  </div>
+
+</section>
+
+{% include "html/includes/popular-swiper.html" %}
+
+
+{% endblock %}

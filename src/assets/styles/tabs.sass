@@ -6,33 +6,64 @@
     display: none
   &__content
     display: none
-    padding: 20px
-    border-radius: 0px 0px 3px 3px
+    margin-top: 20px
+    padding-top: 20px
+    border-top: 1px solid #A3A3A3
     background: #FFF
+  &__content-box
+    display: grid
+    gap: 10px
+  &__content-text
+    color: #040404
+    font-size: 15px
+    font-weight: 400
+    &.marker
+      padding-left: 12px
+      position: relative
+      &::before
+        border-radius: 50%
+        content: ""
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        width: 6px
+        height: 6px
+        background: $orange
   &__nav,
   &__nav-mob
     display: flex
-    justify-content: space-between
-    background: #EAEAEA
+    justify-content: start
+    background: #D4D6D8
     order: -1
-    justify-content: space-evenly
+    border-radius: 5px
     & > label
       cursor: pointer
       display: block
-      padding: 3px 20px
+      padding: 8px 20px
+      color: #2B2B2B
+      font-size: 15px
+      font-weight: 400
       text-decoration: none
-      background: transparent
+      border: 1px solid #A3A3A3
+      background: #ECECEC
       -webkit-appearance: button
-      transition: color $anim, background-color $anim,border-color $anim, border-radius $anim
+      transition: color $anim, background $anim, font-weight $anim
     & > input[type="radio"]:checked + label
-      color: #fff
-      background-color: #2C537C
+      background: #FFF
       cursor: default
-      border-radius: 50px
+      color: $orange
+      font-weight: 700
+  &__label
+    &:first-of-type
+      border-radius: 5px 0 0 5px
+    &:last-of-type
+      border-radius: 0 5px 5px 0
+
 #content-1:has(~ .tab__nav > #tab-btn-1:checked),
-#content-2:has(~ .tab__nav > #tab-btn-2:checked),
-#content-1-mob:has(~ .tab__nav-mob > #tab-btn-1-mob:checked),
-#content-2-mob:has(~ .tab__nav-mob > #tab-btn-2-mob:checked)
+#content-2:has(~ .tab__nav > #tab-btn-2:checked)
+  display: block
 
-
+#order-page-content-1:has(~ .tab__nav > #order-page-tab-btn-1:checked),
+#order-page-content-2:has(~ .tab__nav > #order-page-tab-btn-2:checked)
   display: block

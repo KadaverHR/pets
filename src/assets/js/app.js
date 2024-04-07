@@ -125,37 +125,37 @@ $(document).ready(function () {
 
 
 
-  // ymaps.ready(init);
+  ymaps.ready(init);
 
-  // function init() {
-  //   // в этой версии координаты просто элементы массива (и они поменяны местами)
-  //   if (document.getElementById('map') === null) return
-  //   let destinations = {
-  //     'MSK': [55.755864, 37.617698], //орел
-  //   },
+  function init() {
+    // в этой версии координаты просто элементы массива (и они поменяны местами)
+    if (document.getElementById('map') === null) return
+    let destinations = {
+      'MSK': [55.755864, 37.617698], //орел
+    },
 
-  //     // Создание экземпляра карты и его привязка к контейнеру с
-  //     // заданным id ("map").
-  //     myMap = new ymaps.Map('map', {
-  //       // При инициализации карты обязательно нужно указать
-  //       // её центр и коэффициент масштабирования.
-  //       center: destinations['MSK'],
-  //       zoom: 13.5
-  //     });
+      // Создание экземпляра карты и его привязка к контейнеру с
+      // заданным id ("map").
+      myMap = new ymaps.Map('map', {
+        // При инициализации карты обязательно нужно указать
+        // её центр и коэффициент масштабирования.
+        center: destinations['MSK'],
+        zoom: 13.5
+      });
 
-  //   // Добавление метки
-  //   // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
-  //   let myPlacemark = new ymaps.Placemark([55.847861, 37.650055], {}, {
-  //     //опции
-  //     iconLayout: 'default#image',
-  //     iconImageHref: '../assets/img/map-icon.png',
-  //     iconImageSize: [44, 61],
-  //     iconImageOffset: [-27, -54],
-  //   });
+    // Добавление метки
+    // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
+    let myPlacemark = new ymaps.Placemark([55.847861, 37.650055], {}, {
+      //опции
+      iconLayout: 'default#image',
+      iconImageHref: '../assets/img/map-icon.png',
+      iconImageSize: [44, 61],
+      iconImageOffset: [-27, -54],
+    });
 
-  //   // После того как метка была создана, добавляем её на карту.
-  //   myMap.geoObjects.add(myPlacemark);
-  // }
+    // После того как метка была создана, добавляем её на карту.
+    myMap.geoObjects.add(myPlacemark);
+  }
 
 
   // меню
