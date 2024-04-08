@@ -176,7 +176,7 @@ $(document).ready(function () {
     element.addEventListener('mouseout', () => {
       catalogData.classList.remove('d-block')
     })
-    // })
+
 
   });
 

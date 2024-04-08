@@ -296,6 +296,13 @@
 .catalog-navigation
   display: grid
   gap: 15px
+  min-width: 192px
+  top: 75%
+  overflow: hidden
+  padding: 15px
+  // border-radius: 5px 0 0 5px
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.15)
+  background-color: #ffffff
   &__link
     font-size: 14px
     font-weight: 400
@@ -310,22 +317,42 @@
   &__item
     position: relative
 .catalog-drop
-  background-color: #ffffff
   position: absolute
-  min-width: 192px
-  top: 75%
+  // display: none
   z-index: 999
-  overflow: hidden
-  display: none
-  padding: 15px
-  border-radius: 5px
-  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.15)
+
   @media all and ($table)
     top: 40%
   &__container
-    display: flex
+    display: grid
+    grid-auto-flow: column
+    align-items: start
     @media all and ($mobile)
       display: none
+.submenu
+  background-color: #ffffff
+  position: relative
+  min-width: 579px
+  min-height: 190px
+  gap: 15px 30px
+  z-index: 0
+  display: flex 
+  flex-wrap: wrap
+  overflow: hidden
+  // display: none
+  padding: 15px
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.15)
+  &__item 
+    flex: 0 1 30%
+  &__link
+    color: #312C2B
+    font-size: 15px
+    font-style: italic
+    font-weight: 400
+    text-decoration: none
+    line-height: 15px
+  @media all and ($table)
+    top: 40%
 
 .search
   position: relative
