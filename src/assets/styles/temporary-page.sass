@@ -81,3 +81,33 @@
     position: absolute
     right: 20px
     top: 20px
+
+@media all and ($table)
+  section
+    padding-top: 40px
+    padding-bottom: 40px
+    .header-btm__area
+    .catalog
+      display: none
+    .cat, .dog
+      display: none
+    .footer-top__box
+      grid-template-areas: "left right"
+      grid-template-columns: 1fr 1fr
+  @media all and ($mobile)
+    .footer-top__box
+      grid-template-columns: 1fr
+      grid-template-areas: none
+    section
+      padding-top: 30px
+      padding-bottom: 30px
+    .swiper-discounts__swiper-pagination, .swiper-seller__swiper-pagination
+      bottom: 0 !important
+    .call__form-box
+      grid-template-columns: 1fr
+    .footer-top__left
+      grid-area: auto
+    .title-wrapper
+      grid-template-columns: auto 1fr
+    .title
+      grid-column: 1/2

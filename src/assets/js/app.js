@@ -172,6 +172,18 @@ $(document).ready(function () {
       catalogData.addEventListener('mouseout', () => {
         catalogData.classList.remove('d-block')
       })
+
+      let catalogLink = element.querySelectorAll('.catalog-navigation__link')
+
+      catalogLink.forEach(el => {
+        el.addEventListener('mouseover', () => {
+          submenu = element.querySelector('.submenu__box')
+          submenu.classList.add('d-block')
+        })
+      });
+
+
+
     })
     element.addEventListener('mouseout', () => {
       catalogData.classList.remove('d-block')
@@ -182,22 +194,45 @@ $(document).ready(function () {
 
   /////мобильное меню
 
-  // var acc = document.getElementsByClassName("accordion");
-  // var i;
+  var acc = document.getElementsByClassName("accordion");
+  var i;
 
-  // for (i = 0; i < acc.length; i++) {
-  //   acc[i].addEventListener("click", function () {
-  //     this.classList.toggle("active");
-  //     var panel = this.nextElementSibling;
-  //     if (panel.style.maxHeight) {
-  //       panel.style.maxHeight = null;
-  //     } else {
-  //       panel.style.maxHeight = panel.scrollHeight + "px";
-  //     }
-  //   });
-  // }
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+
+
   // Бургер
-  // 
+  let burger = document.querySelector('#hamburger-menu-mob');
+  let menu = document.querySelector('#catalog-drop-mob');
+  let menuLinks = menu.querySelectorAll('.catalog-link');
+  let closeMenu = menu.querySelector('#close-mob')
+
+  burger.addEventListener('click', function () {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('stop-scroll');
+  });
+
+  closeMenu.addEventListener('click', function () {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('stop-scroll');
+  });
+
+  menuLinks.forEach(function (el) {
+    el.addEventListener('click', function () {
+      menu.classList.remove('active');
+      document.body.classList.remove('stop-scroll')
+    })
+  });
+
 
 
 
