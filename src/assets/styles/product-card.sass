@@ -4,31 +4,29 @@
     padding-bottom: 20px
     border-bottom: 1px solid #E5E5E5
     grid-template-columns: 1fr
-    @media all and ($table)
-      border-bottom: none
     .title
       text-align: start
       grid-column: auto
-      // font-size: 36px
       @media all and ($mobile)
         font-size: 24px
   &__box
     padding: 30px 0
     display: grid
-    grid-template-columns: 460px  repeat(2, 1fr )
+    grid-template-columns: 460px repeat(2, 1fr )
     gap: 30px
     align-items: stretch
     @media all and ($middle)
       grid-template-columns: 350px 1fr 1fr
     @media all and ($table)
+      grid-template-columns: auto 1fr
+    @media all and ($mobile)
       grid-template-columns: 1fr
-      border: 1px solid #AAB2C2
-      border-radius: 5px
-      padding: 20px 10px
   &__imgs-box
     display: grid
     grid-template-columns: 50px 1fr
     gap: 10px
+    @media all and ($mobile)
+      grid-template-columns: 1fr
   &__img-wrapper
     // padding: 30px
     // border: 1px solid #AAB2C2
@@ -45,9 +43,9 @@
     gap: 15px
     justify-items: start
     padding-bottom: 15px
-    border-bottom: 1px dashed #6D6F7C
+    // border-bottom: 1px dashed #6D6F7C
     @media all and ($table)
-      justify-items: stretch
+      // justify-items: stretch
   &__desc-item
     display: grid
     grid-auto-flow: column
@@ -56,15 +54,15 @@
     @media all and ($table)
       justify-content: space-between
       position: relative
-      &::before
-        content: ""
-        position: absolute
-        width: 100%
-        height: 1px
-        top: 50%
-        transform: translateY(-50%)
-        background: url(../../assets/img/line.svg)
-        z-index: 0
+      // &::before
+      //   content: ""
+      //   position: absolute
+      //   width: 100%
+      //   height: 1px
+      //   top: 50%
+      //   transform: translateY(-50%)
+      //   background: url(../../assets/img/line.svg)
+      //   z-index: 0
   &__desc-bg
     @media all and ($table)
       padding: 0 10px
@@ -99,17 +97,22 @@
     display: grid
     gap: 10px
     justify-items: start
+    @media all and ($table)
+      min-width: 274px
   &__order
     display: grid
     border-radius: 5px
     border: 1px solid #A3A3A3
     padding: 20px
-
+    @media all and ($table)
+      grid-column: 1/3
+    // @media all and ($mobile)
+    //   padding: 0
+    //   box-shadow: none
+    //   border-radius: 0
+    //   padding-top: 20px
     @media all and ($mobile)
-      padding: 0
-      box-shadow: none
-      border-radius: 0
-      padding-top: 20px
+      grid-column: 1/2
 
   &__order-title
     color: #000
@@ -118,12 +121,12 @@
     text-align: center
     @media all and ($table)
       display: none
-  &__order-title-param
-    @media all and ($mobile)
-      color: #000
-      font-family: 'Roboto', 'Lato', sans-serif
-      font-size: 17px
-      font-weight: 700
+  // &__order-title-param
+  //   @media all and ($mobile)
+  //     color: #000
+  //     font-family: 'Roboto', 'Lato', sans-serif
+  //     font-size: 17px
+  //     font-weight: 700
   &__order-price-box
     position: relative
     .card__price-old
@@ -161,10 +164,12 @@
       padding-top: 0
       padding-bottom: 15px
       grid-template-columns: repeat(3, 1fr)
+      gap: 40px
     @media all and ($mobile)
       grid-template-columns: 1fr
       // justify-items: center
       justify-content: stretch
+      gap: 20px
   &__order-btn-box
     display: grid
     gap: 15px

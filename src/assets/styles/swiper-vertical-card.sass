@@ -4,6 +4,8 @@
 		position: relative
 		justify-content: center
 		align-items: center
+		@media all and ($mobile)
+			order: 1
 		.swiper-vertical-card
 			height: 350px
 			display: flex
@@ -11,24 +13,57 @@
 			margin-right: 0
 			padding-top: 20px
 			padding-bottom: 20px
+			@media all and ($mobile)
+				height: auto
+				width: calc( 100vw - 40px )
+				max-width: 389px
+				padding-top: 0
+				padding-bottom: 0
+				padding-left: 20px
+				padding-right: 20px
 			&__button-next, &__button-prev
 				background-color: #fff
+				display: flex !important
 				right: auto
 				width: 36px
-				height: 16px
+				height: 50px
 				left: 50%
 				transform: translateX(-50%)
 				background-repeat: no-repeat
 				background-position: center
+				margin-top: 0
 				&::after
 					display: none
+				@media all and ($mobile)
+					left: auto
+					transform: translateX(0)
+					width: 50px
+					height: 36px
 			&__button-next
 				top: 0
 				bottom: auto
 				margin-top: 0
 				background-image: url(../../assets/img/btn-prev.svg)
-			&__button-prev
+				&::after
+					position: absolute
+				&.swiper-button-disabled
+					opacity: 1
+					background-image: url(../../assets/img/btn-prev-dis.svg)
+				@media all and ($mobile)
+					top: 50%
+					transform: translateY(-50%) rotate(-90deg)
+					left: -10px
 
+			&__button-prev
 				bottom: 0
 				top: auto
 				background-image: url(../../assets/img/btn-next.svg)
+				@media all and ($mobile)
+					bottom: 50%
+					top: 50%
+					left: auto
+					transform: translateY(-50%) rotate(-90deg)
+					right: -10px
+				&.swiper-button-disabled
+					opacity: 1
+					background-image: url(../../assets/img/btn-next-dis.svg)

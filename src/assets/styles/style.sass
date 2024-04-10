@@ -6,6 +6,11 @@ main
 
 section
   display: grid
+  padding-top: 25px
+  padding-bottom: 25px
+  @media all and ($mobile)
+    padding-top: 15px
+    padding-bottom: 15px
 header, footer
   position: relative
 .container
@@ -118,12 +123,13 @@ img
   align-items: center
   justify-content: space-between
   padding-bottom: 40px
-  @media all and ($middle)
+  @media all and ($mobile)
     padding-bottom: 30px !important
+    grid-template-columns: 1fr !important
   @media all and ($xs)
     padding-top: 20px !important
     padding-bottom: 20px !important
-    grid-template-columns: 1fr !important
+
     justify-content: start
     gap: 10px
   &__simple
@@ -174,6 +180,7 @@ img
     font-size: 36px
   @media all and ($mobile)
     font-size: 24px
+    grid-column: auto
   &__count
     font-size: 17px
     font-weight: 400
@@ -181,12 +188,12 @@ img
     @media all and ($mobile)
       font-size: 15px
 
-.section-style
-  padding-top: 40px
-  padding-bottom: 40px
-  @media all and ($mobile)
-    padding-top: 30px
-    padding-bottom: 30px
+// .section-style
+//   padding-top: 40px
+//   padding-bottom: 40px
+//   @media all and ($mobile)
+//     padding-top: 30px
+//     padding-bottom: 30px
 
 .title-link
   color: #3B454E
@@ -198,8 +205,9 @@ img
   grid-column: 3/4
   &:active, &:focus, &:hover
     color: #FF8F51
-  @media all and ($xs)
-    justify-self: start
+  @media all and ($mobile)
+    grid-column: auto
+    justify-self: center
 
 .d-block
   display: block !important
@@ -515,6 +523,8 @@ img
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 30px
+    @media all and ($mobile)
+      grid-template-columns: 1fr
   &__btn
     background: $orange
     justify-self: start

@@ -449,40 +449,20 @@ $(document).ready(function () {
     // loop: true,
     allowSlideNext: true,
     spaceBetween: 5,
-    direction: "vertical",
-    // autoplay: {
-    //   delay: 3000,
-    // },
+    slidesPerView: 6,
     navigation: {
       nextEl: ".swiper-vertical-card__button-next",
       prevEl: ".swiper-vertical-card__button-prev",
     },
-    slidesPerView: 5,
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 1,
-    //     spaceBetweenSlides: 10
-    //   },
-    //   567: {
-    //     slidesPerView: 2,
 
-    //     spaceBetweenSlides: 10
-    //   },
-    //   767: {
-    //     slidesPerView: 4,
-    //     spaceBetweenSlides: 30,
-    //   },
-    //   1023: {
-    //     slidesPerView: 4,
-    //     spaceBetweenSlides: 30
-    //     // spaceBetweenSlides: 50
-    //   },
-    //   1139: {
-    //     slidesPerView: 4,
-    //     // slidesPerGroup: 1,
-    //     spaceBetweenSlides: 30
-    //   },
-    // },
+    breakpoints: {
+      0: {
+        direction: "horizontal",
+      },
+      767: {
+        direction: "vertical",
+      },
+    },
   });
 
 
