@@ -17,10 +17,10 @@ body
   input:checked ~ .control
     background-color: #929AA8
     &:after
-      left: 19px
+        left: 19px
   input:checked + .label
     background-color: #929AA8
-    color: #EA5F12
+    color: $orange
 .control
   width: 100%
   border-radius: 10px
@@ -112,8 +112,9 @@ body
   display: grid
   grid-auto-flow: column
   grid-template-columns: 1fr 1fr 1fr
-  background: #D4D6D8
+  background: #F1F3F4
   justify-items: center
+  align-items: center
   &__reset
     justify-self: start
   // & > *
@@ -131,8 +132,8 @@ body
     font-weight: 600
     grid-column: 2/3
   &__close
-    justify-self: end
-    grid-column: 3/4
+    justify-self: start
+    grid-column: 1/2
     a
       display: grid
       grid-auto-flow: column
@@ -142,7 +143,7 @@ body
         color: #000
         font-size: 16px
         font-weight: 700
-        
+
       img
         width: 100%
 
@@ -166,7 +167,7 @@ body
     border-radius: 4px
     font-size: 14px
     font-weight: 700
-    color: #FFFFFF 
+    color: #FFFFFF
     padding: 5px 20px
     width: 100%
     &:active, &:hover, &:focus
@@ -177,7 +178,7 @@ body
     margin-bottom: 15px
   &__btn-red
     width: 100%
-    background: #EA5F12
+    background: $orange
     color: #fff
     font-size: 14px
     font-weight: 700
@@ -224,19 +225,19 @@ body
   font-size: 14px
   font-weight: 400
   padding: 7px 21px
-  background: #EFF3F6
+  background: #DEE0E2
   border-radius: 50px
   display: inline-block
   margin: 0 2px 5px 2px
   text-decoration: none
-  &:active, &:hover, &:focus
-    text-decoration-line: none
-    color: #EA5F12
-  &--active
-    background-color: #EA5F12
-    color: #ffffff
-    &:active, &:hover, &:focus
-      color: #fff
+  // &:active, &:hover, &:focus
+  //   text-decoration-line: none
+  //   color: $orange
+  // &--active
+  //   background-color: $orange
+  //   color: #ffffff
+  //   &:active, &:hover, &:focus
+  //     color: #fff
 
 .filter-mobile-type
   &__buttons
@@ -249,13 +250,13 @@ body
     input:checked ~ label
       background-color: #F6F6F8
       font: 600 13px/18px 'Open Sans', sans-serif
-      color: #EA5F12
+      color: $orange
     input:checked ~ label .filter-mobile-type__label-text::before
       visibility: visible
   &__button
     flex: 1 1 50%
     &:first-child
-      border-right: 1px solid #EFF3F6
+      border-right: 1px solid #DEE0E2
   &__label
     padding: 7px
     width: 100%
@@ -273,7 +274,7 @@ body
       bottom: -8px
       left: 50%
       transform: translateX(-50%)
-      background: #EA5F12
+      background: $orange
       visibility: hidden
 
 .bottom-menu
@@ -374,7 +375,7 @@ body
 
 .filter-mobile-content-list
   overflow-y: auto
-  margin: 55px 0 118px 0
+  margin: 30px 0 118px 0
   padding-top: 20px
   width: 100%
 
@@ -412,7 +413,7 @@ body
     display: flex
     align-items: center
     justify-content: center
-    background-color: #EA5F12
+    background-color: $orange
 .page-catalog
   .catalog-area .catalog-title-block .catalog-title span
     font: bold 27px/130% 'Open Sans', sans-serif
@@ -439,7 +440,7 @@ body
     @media (max-width: 991px)
       display: block
       .old-price
-        color: #EA5F12
+        color: $orange
         font: 400 14px/19px 'Open Sans', sans-serif
         text-decoration-line: line-through
         text-transform: uppercase
