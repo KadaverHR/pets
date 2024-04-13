@@ -5,6 +5,8 @@ $(document).ready(function () {
   document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
+  AOS.init()
+
   //высота элементов
 
   // try {
